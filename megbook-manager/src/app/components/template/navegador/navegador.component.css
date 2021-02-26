@@ -1,14 +1,26 @@
 .sidenav {
-    background-color:rgb(72, 129, 72);
     width: 200px;
+    background-color: #5C6BC0;
 }
 
 .sidenav a { 
-    color: white;
-    
+    color: white;    
 }
 
 .sidenav i {
-    color: #c38bbf;
     padding-right: 10px;
+}
+
+.content {
+    padding: 16px;
+}
+
+.nav-list{
+    background-color: #3949AB;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.start-nav-list {
+    margin-top: -10px;
 }
