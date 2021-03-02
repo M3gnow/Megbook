@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     text-decoration: none;
+    color: #000
 }
 
 .header .logo{
@@ -20,4 +21,8 @@
 
 .header .title-group i {
     padding-right: 10px;
+}
+
+.nameFantasia {
+    padding: 20px 20px 20px 30px;
 }

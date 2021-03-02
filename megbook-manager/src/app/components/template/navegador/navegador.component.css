@@ -4,7 +4,8 @@
 }
 
 .sidenav a { 
-    color: white;    
+    color: white;  
+    height: 40px;  
 }
 
 .sidenav i {
@@ -19,8 +20,14 @@
     background-color: #3949AB;
     margin-top: 5px;
     margin-bottom: 5px;
+    height: 2100px;
 }
 
 .start-nav-list {
     margin-top: -10px;
+}
+
+.itensNav {
+    font-size: 16px;
+    line-height: 1;
 }
