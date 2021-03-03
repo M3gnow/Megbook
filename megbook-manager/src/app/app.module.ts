@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,8 +21,16 @@ import { HomeComponent } from './views/home/home.component';
 import { ClientComponent } from './views/client/client.component';
 import { ClientCreateComponent } from './components/client/client-create/client-create.component';
 import { ClientReadComponent } from './components/client/client-read/client-read.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
+import localePt from  '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+import { ClientUpdateComponent } from './components/client/client-update/client-update.component';
+import { ClientDeleteComponent } from './components/client/client-delete/client-delete.component';
 
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -33,7 +41,9 @@ import { ClientReadComponent } from './components/client/client-read/client-read
     HomeComponent,
     ClientComponent,
     ClientCreateComponent,
-    ClientReadComponent
+    ClientReadComponent,
+    ClientUpdateComponent,
+    ClientDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,9 +58,15 @@ import { ClientReadComponent } from './components/client/client-read/client-read
     HttpClientModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'pt-BR'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

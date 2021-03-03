@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-card-title> Excluir Cliente </mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput [value]="client.name" name="nameClient" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [value]="client.price" name="priceClient" disabled>
+        </mat-form-field>
+    </form>
+
+    <div class="row buttonsAction">
+        <button mat-raised-button (click)="deleteClient()" color="accent">
+            Confirmar
+        </button>
+        
+        <button mat-raised-button (click)="cancel()" color="primary">
+            Cancelar
+        </button>
+    </div>
+    
+</mat-card>
