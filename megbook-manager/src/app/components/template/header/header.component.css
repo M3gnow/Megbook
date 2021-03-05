@@ -1,9 +1,3 @@
-.header {
-    display: flex;
-    align-items: center;
-    background-color: #311B92;
-}
-
 .header a {
     display: flex;
     align-items: center;
@@ -23,6 +17,24 @@
     padding-right: 10px;
 }
 
-.nameFantasia {
-    padding: 20px 20px 20px 30px;
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logoMarca {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.nomeFantasia{
+    margin:10px;
+}
+
+
+.headerMeg {
+    font-size: 16px;
+    padding-top: 3px;
+    margin-right: 10px;
+    vertical-align: middle;
 }

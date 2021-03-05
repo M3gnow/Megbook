@@ -1,7 +1,6 @@
 .footer {
     position: fixed;
     bottom: 0px;
-    background-color: #311B92;
     display: flex;
     justify-content: flex-end;
 }

@@ -10,7 +10,7 @@ import { ClientService } from '../client.service';
 export class ClientReadComponent implements OnInit {
 
   clients: Client[];
-  displayedColumns = ['id', 'name', 'price', 'action'];
+  displayedColumns = ['id', 'name', 'price', 'action', 'status'];
   constructor(private clientService: ClientService) { }
 
   ngOnInit(): void {
@@ -18,18 +18,28 @@ export class ClientReadComponent implements OnInit {
       { 
         id: 1,
         name:'megnow', 
-        price: 100.50
+        price: 100.50,
+        status: false
       },
       {
         id: 2,
         name:'big', 
-        price: 50.50
+        price: 50.50,
+        status: true
       },
       {
         id: 3,
         name:'trollando', 
-        price: 20.50
+        price: 20.50,
+        status: true
       },
+      {
+        id: 4,
+        name:'trollando', 
+        price: 20.50,
+        status: true
+      },
+      
     ];
     // this.clientService.read().subscribe((resultClient)=> { 
     //   this.clients = resultClient;

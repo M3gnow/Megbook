@@ -24,6 +24,8 @@ import { ClientReadComponent } from './components/client/client-read/client-read
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatMenuModule } from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
 
 import localePt from  '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
@@ -61,7 +63,9 @@ registerLocaleData(localePt);
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatMenuModule,
+    MatSelectModule
   ],
   providers: [{
     provide: LOCALE_ID,

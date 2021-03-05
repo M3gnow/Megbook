@@ -13,3 +13,11 @@ table {
 .delete > i {
     color: #e35e6b;
 }
+
+.toggle_on > i {
+    color: #69f0ae;
+}
+
+.toggle_off > i {
+    color: #7b1fa2;
+}

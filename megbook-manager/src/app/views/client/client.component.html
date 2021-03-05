@@ -1,6 +1,66 @@
-<button mat-raised-button (click)="navigateToClientCreate()" color="accent">
-    Cadastre-se
-</button>
+<div class="container">
+    <mat-card class="card">
+        <div class="row title">
+            <span>Listagem de <strong>Clientes</strong></span>
+            
+            <button mat-raised-button (click)="navigateToClientCreate()" color="accent" class="buttonAdd">
+                <i class="material-icons add"> 
+                    add
+                </i>
+                Novo Cliente
+            </button>
+        </div>
 
-<megbook-client-read></megbook-client-read>
+        <div class="row">
+            <mat-form-field appearance="fill">
+                <mat-label>Favorite food</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="filters">
+                <mat-label>Favorite food</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="filters">
+                <mat-label>Favorite food</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="filters">
+                <mat-label>Favorite food</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" class="search">
+                <mat-label>Busca</mat-label>
+                <input matInput placeholder="Ex. João Andrade">
+            </mat-form-field>
+
+            <button mat-raised-button (click)="navigateToClientCreate()" color="accent" class="buttonSearch">
+                <i class="material-icons"> 
+                    search
+                </i>
+            </button>
+        </div>
+    </mat-card>
+
+    <megbook-client-read></megbook-client-read>    
+</div>
 <!-- <megbook-client-read-table></megbook-client-read-table> -->
