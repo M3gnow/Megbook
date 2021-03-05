@@ -1,6 +1,6 @@
 .sidenav {
     width: 200px;
-    background-color: #5C6BC0;
+    background-color: #69f0ae;
 }
 
 .sidenav a { 
@@ -13,11 +13,12 @@
 }
 
 .content {
-    padding: 16px;
+    padding: 20px;
+    height: 100%;
 }
 
 .nav-list{
-    background-color: #3949AB;
+    background-color: #7b1fa2;
     margin-top: 5px;
     margin-bottom: 5px;
     height: 2100px;
@@ -30,4 +31,5 @@
 .itensNav {
     font-size: 16px;
     line-height: 1;
+    color: black;
 }

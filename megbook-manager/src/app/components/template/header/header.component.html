@@ -1,20 +1,33 @@
-<mat-toolbar class="header mat-elevation-z4">
-    <span>
-        <a>
-            <img class="logo" src="assets/images/livro.png" alt="logo">
-        </a>
-    </span>
-    <span class="nameFantasia">
-        MEGBOOK
-    </span>
-    <span class="title-group">
-        <div class="row headerMeg">
-            <a routerLink="{{ routeUrl }}">
-                <i class="material-icons">
-                    {{ icon }}
-                </i>
-                {{ title }}
-            </a>
+<mat-toolbar class="header" color="primary">
+    <mat-toolbar-row>
+        
+        <button mat-button [matMenuTriggerFor]="fathersOption">
+            <i class="material-icons">menu</i>
+        </button>
+
+        <mat-menu #fathersOption="matMenu">
+            <button mat-menu-item routerLink="">Home</button>
+            <button mat-menu-item routerLink="">Perfil</button>
+            <button mat-menu-item [matMenuTriggerFor]="clientChildren">Cliente</button>
+            <button mat-menu-item routerLink="">Vendas</button>
+            <button mat-menu-item routerLink="">Estoque</button>
+            <button mat-menu-item routerLink="">Controle de Trocas</button>
+
+        </mat-menu>
+
+        <mat-menu #clientChildren="matMenu">
+            <button mat-menu-item routerLink="/client/create">Novo Cliente</button>
+            <button mat-menu-item routerLink="/clients">Lista de Clientes</button>
+        </mat-menu>
+
+        <div class="logoMarca">
+            <span>
+                <a>
+                    <img class="logo" src="assets/images/livro.png" alt="logo">
+                </a>
+            </span>
+
+            <span class="nomeFantasia">Megbook</span>
         </div>
-    </span>
+    </mat-toolbar-row>
 </mat-toolbar>

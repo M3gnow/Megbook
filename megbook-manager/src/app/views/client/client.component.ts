@@ -9,6 +9,12 @@ import { Router } from '@angular/router';
 })
 export class ClientComponent implements OnInit {
 
+  foods = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
+
   constructor (private router: Router, private headerService: HeaderService) {
     headerService.HeaderData = {
       title: 'Cadastro de Clientes',
@@ -18,6 +24,7 @@ export class ClientComponent implements OnInit {
    }
 
   ngOnInit (): void {
+    
   }
 
   navigateToClientCreate () : void {
