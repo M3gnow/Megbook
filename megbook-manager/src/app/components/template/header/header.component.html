@@ -1,23 +1,34 @@
 <mat-toolbar class="header" color="primary">
     <mat-toolbar-row>
         
-        <button mat-button [matMenuTriggerFor]="fathersOption">
+        <button mat-button [matMenuTriggerFor]="adminView" *ngIf="false">
             <i class="material-icons">menu</i>
         </button>
 
-        <mat-menu #fathersOption="matMenu">
+        <button mat-button [matMenuTriggerFor]="clientView" *ngIf="true">
+            <i class="material-icons">menu</i>
+        </button>
+
+        <mat-menu #adminView="matMenu">
             <button mat-menu-item routerLink="">Home</button>
             <button mat-menu-item routerLink="">Perfil</button>
-            <button mat-menu-item [matMenuTriggerFor]="clientChildren">Cliente</button>
             <button mat-menu-item routerLink="">Vendas</button>
             <button mat-menu-item routerLink="">Estoque</button>
             <button mat-menu-item routerLink="">Controle de Trocas</button>
-
+            <button mat-menu-item routerLink="/clients">Lista de Clientes</button>
         </mat-menu>
 
-        <mat-menu #clientChildren="matMenu">
-            <button mat-menu-item routerLink="/client/create">Novo Cliente</button>
-            <button mat-menu-item routerLink="/clients">Lista de Clientes</button>
+        <mat-menu #clientView="matMenu">
+            <button mat-menu-item>Minha Conta</button>
+            <button mat-menu-item [matMenuTriggerFor]="optionsEnderecoChildren">Endereços</button>
+            <button mat-menu-item routerLink="/clients">Cartões</button>
+            <button mat-menu-item routerLink="/clients">Meus Cupons</button>
+            <button mat-menu-item routerLink="/clients">Transações</button>
+        </mat-menu>
+
+        <mat-menu #optionsEnderecoChildren="matMenu">
+            <button mat-menu-item routerLink="/clients">Endereço de entrega</button>
+            <button mat-menu-item routerLink="/clients">Endereço de cobrança</button>
         </mat-menu>
 
         <div class="logoMarca">
@@ -31,3 +42,4 @@
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
+
