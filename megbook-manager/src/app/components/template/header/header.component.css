@@ -27,14 +27,22 @@
     flex-direction: row-reverse;
 }
 
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+
 .nomeFantasia{
     margin:10px;
 }
-
 
 .headerMeg {
     font-size: 16px;
     padding-top: 3px;
     margin-right: 10px;
     vertical-align: middle;
+}
+
+.menuLogo {
+    display: flex;
 }

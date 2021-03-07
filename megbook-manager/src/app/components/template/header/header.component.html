@@ -1,45 +1,60 @@
 <mat-toolbar class="header" color="primary">
-    <mat-toolbar-row>
-        
-        <button mat-button [matMenuTriggerFor]="adminView" *ngIf="false">
-            <i class="material-icons">menu</i>
-        </button>
+    <mat-toolbar-row class="toolbar">
+        <div class="menuLogo">
+            <!-- BUTTON MENU  -->
+                <button mat-button [matMenuTriggerFor]="adminView" *ngIf="false">
+                    <i class="material-icons">menu</i>
+                </button>
 
-        <button mat-button [matMenuTriggerFor]="clientView" *ngIf="true">
-            <i class="material-icons">menu</i>
-        </button>
+                <button mat-button [matMenuTriggerFor]="clientView" *ngIf="true">
+                    <i class="material-icons">menu</i>
+                </button>
+            <!-- END BUTTON MENU  -->
 
-        <mat-menu #adminView="matMenu">
-            <button mat-menu-item routerLink="">Home</button>
-            <button mat-menu-item routerLink="">Perfil</button>
-            <button mat-menu-item routerLink="">Vendas</button>
-            <button mat-menu-item routerLink="">Estoque</button>
-            <button mat-menu-item routerLink="">Controle de Trocas</button>
-            <button mat-menu-item routerLink="/clients">Lista de Clientes</button>
-        </mat-menu>
+            <!-- OPTION MENU  -->
+                <mat-menu #adminView="matMenu">
+                    <button mat-menu-item routerLink="">Home</button>
+                    <button mat-menu-item routerLink="">Perfil</button>
+                    <button mat-menu-item routerLink="">Vendas</button>
+                    <button mat-menu-item routerLink="">Estoque</button>
+                    <button mat-menu-item routerLink="">Controle de Trocas</button>
+                    <button mat-menu-item routerLink="/clients">Lista de Clientes</button>
+                </mat-menu>
 
-        <mat-menu #clientView="matMenu">
-            <button mat-menu-item>Minha Conta</button>
-            <button mat-menu-item [matMenuTriggerFor]="optionsEnderecoChildren">Endereços</button>
-            <button mat-menu-item routerLink="/clients">Cartões</button>
-            <button mat-menu-item routerLink="/clients">Meus Cupons</button>
-            <button mat-menu-item routerLink="/clients">Transações</button>
-        </mat-menu>
+                <mat-menu #clientView="matMenu">
+                    <button mat-menu-item>Minha conta</button>
+                    <button mat-menu-item [matMenuTriggerFor]="optionsEnderecoChildren">Endereços</button>
+                    <button mat-menu-item routerLink="/clients">Cartões</button>
+                    <button mat-menu-item routerLink="/clients">Meus cupons</button>
+                    <button mat-menu-item routerLink="/clients">Histórico de transações</button>
+                </mat-menu>
 
-        <mat-menu #optionsEnderecoChildren="matMenu">
-            <button mat-menu-item routerLink="/clients">Endereço de entrega</button>
-            <button mat-menu-item routerLink="/clients">Endereço de cobrança</button>
-        </mat-menu>
+                <mat-menu #optionsEnderecoChildren="matMenu">
+                    <button mat-menu-item routerLink="/clients">Endereço de entrega</button>
+                    <button mat-menu-item routerLink="/clients">Endereço de cobrança</button>
+                </mat-menu>
+            <!-- OPTION MENU  -->
 
-        <div class="logoMarca">
-            <span>
-                <a>
-                    <img class="logo" src="assets/images/livro.png" alt="logo">
-                </a>
-            </span>
+            <!-- LOGO MARCA  -->
+            <div class="logoMarca">
+                <span>
+                    <a>
+                        <img class="logo" src="assets/images/livro.png" alt="logo">
+                    </a>
+                </span>
 
-            <span class="nomeFantasia">Megbook</span>
+                <span class="nomeFantasia">Megbook</span>
+            </div>
+            <!-- END LOGO MARCA  -->
         </div>
+
+        <!-- BUTTON REGISTER -->
+        <div>
+            <button mat-button *ngIf="true">
+                Cadastre-se
+            </button>
+        </div>
+        <!-- BUTTON REGISTER -->
     </mat-toolbar-row>
 </mat-toolbar>
 
