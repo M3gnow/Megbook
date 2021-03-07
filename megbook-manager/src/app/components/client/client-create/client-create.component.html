@@ -1,5 +1,6 @@
-<mat-card>
-    <mat-card-title> Novo Cliente </mat-card-title>
+<mat-card class="form">
+    <mat-card-title class="title"> Dados Pessoais </mat-card-title>
+
     <form>
         <mat-form-field>
             <input matInput placeholder="Digite seu nome" 
@@ -14,6 +15,9 @@
         </mat-form-field>
     </form>
 
+</mat-card>
+
+<mat-card>
     <div class="row buttonsAction">
         <button mat-raised-button (click)="createClient()" color="primary">
             Cadastrar
@@ -23,5 +27,4 @@
             Cancelar
         </button>
     </div>
-    
 </mat-card>

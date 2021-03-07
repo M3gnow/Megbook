@@ -9,3 +9,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;  background
 .v-middle {
     vertical-align: middle;
 }
+
+.title.mat-card {
+    margin-bottom: 20px;
+}
+
+.form.mat-card {
+    margin-bottom: 20px;
+}
