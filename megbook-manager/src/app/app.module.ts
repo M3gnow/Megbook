@@ -31,6 +31,10 @@ import localePt from  '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { ClientUpdateComponent } from './components/client/client-update/client-update.component';
 import { ClientDeleteComponent } from './components/client/client-delete/client-delete.component';
+import { EnderecoComponent } from './components/endereco/endereco.component';
+import { CartaoComponent } from './components/cartao/cartao.component';
+import { CuponsComponent } from './components/cupons/cupons.component';
+import { TransacoesComponent } from './components/transacoes/transacoes.component';
 
 registerLocaleData(localePt);
 
@@ -46,6 +50,10 @@ registerLocaleData(localePt);
     ClientReadComponent,
     ClientUpdateComponent,
     ClientDeleteComponent,
+    EnderecoComponent,
+    CartaoComponent,
+    CuponsComponent,
+    TransacoesComponent,
   ],
   imports: [
     BrowserModule,

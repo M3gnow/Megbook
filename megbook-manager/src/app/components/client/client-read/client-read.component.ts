@@ -35,7 +35,7 @@ export class ClientReadComponent implements OnInit {
       },
       {
         id: 4,
-        name:'trollando', 
+        name:'joao', 
         price: 20.50,
         status: true
       },
