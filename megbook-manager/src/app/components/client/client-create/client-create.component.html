@@ -3,15 +3,23 @@
 
     <form>
         <mat-form-field>
-            <input matInput placeholder="Digite seu nome" 
+            <input matInput placeholder="Digite seu nome completo" 
                 [(ngModel)]="client.name"
                 name="nameClient">
         </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Digite o preço"
-                [(ngModel)]="client.price"
-                name="priceClient">
+        <mat-radio-group>
+            <mat-radio-button value="masculino">Masculino</mat-radio-button>
+            <mat-radio-button value="feminino">Feminino</mat-radio-button>
+            <mat-radio-button value="">Prefiro não identificar</mat-radio-button>
+        </mat-radio-group>
+
+        
+        <mat-form-field appearance="fill" class="col-md-6">
+            <mat-label>Data de nascimento</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
     </form>
 

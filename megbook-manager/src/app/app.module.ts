@@ -25,7 +25,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import localePt from  '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
@@ -35,6 +37,7 @@ import { EnderecoComponent } from './components/endereco/endereco.component';
 import { CartaoComponent } from './components/cartao/cartao.component';
 import { CuponsComponent } from './components/cupons/cupons.component';
 import { TransacoesComponent } from './components/transacoes/transacoes.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 registerLocaleData(localePt);
 
@@ -73,7 +76,10 @@ registerLocaleData(localePt);
     MatPaginatorModule,
     MatSortModule,
     MatMenuModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [{
     provide: LOCALE_ID,
