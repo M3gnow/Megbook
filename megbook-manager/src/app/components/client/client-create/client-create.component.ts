@@ -1,3 +1,4 @@
+import { tipoTelefone } from './../../../models/tipoTelefone';
 import { Client } from './../client.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -9,6 +10,8 @@ import { ClientService } from '../client.service';
   styleUrls: ['./client-create.component.css']
 })
 export class ClientCreateComponent implements OnInit {
+  tipoTelefone: string
+  tipoTelefones: tipoTelefone[];
 
   client: Client = {
     name: null,
@@ -18,6 +21,11 @@ export class ClientCreateComponent implements OnInit {
   constructor(private clienteService: ClientService, private router: Router) { }
 
   ngOnInit(): void {
+    this.tipoTelefones = [
+      { nome: 'Telefone Fixo' },
+      { nome: 'Telefone Celular' },
+      { nome: 'Telefone Comercial' },
+    ];
   }
 
   createClient () : void {

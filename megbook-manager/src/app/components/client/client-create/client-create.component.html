@@ -1,26 +1,52 @@
 <mat-card class="form">
-    <mat-card-title class="title"> Dados Pessoais </mat-card-title>
+    <mat-card-title> Dados Pessoais </mat-card-title>
 
     <form>
-        <mat-form-field>
-            <input matInput placeholder="Digite seu nome completo" 
-                [(ngModel)]="client.name"
-                name="nameClient">
-        </mat-form-field>
+        <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
+            <mat-form-field class="col-md-6">
+                <input matInput placeholder="Digite seu nome completo" [(ngModel)]="client.name" name="nameClient" style="margin-top: 10px;">
+            </mat-form-field>
+    
+            <mat-form-field appearance="fill" class="col-md-6">
+                <mat-label>Data de nascimento</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
 
-        <mat-radio-group>
-            <mat-radio-button value="masculino">Masculino</mat-radio-button>
-            <mat-radio-button value="feminino">Feminino</mat-radio-button>
-            <mat-radio-button value="">Prefiro não identificar</mat-radio-button>
-        </mat-radio-group>
+        <mat-card-title class="title">Gênero</mat-card-title>
 
-        
-        <mat-form-field appearance="fill" class="col-md-6">
-            <mat-label>Data de nascimento</mat-label>
-            <input matInput [matDatepicker]="picker">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
+        <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
+            <div class="col-md-6">
+                <mat-card>
+                    <mat-radio-group class="flexAndBetween">
+                        <mat-radio-button value="masculino">Masculino</mat-radio-button>
+                        <mat-radio-button value="feminino">Feminino</mat-radio-button>
+                        <mat-radio-button value="">Prefiro não identificar</mat-radio-button>
+                    </mat-radio-group>
+                </mat-card>
+            </div>
+        </div>
+
+        <div style="margin-top: 10px;">
+            <mat-card-title>Telefone</mat-card-title>
+        </div>
+
+        <div class="row" style="margin-top: 10px; margin-bottom: 10px;">    
+            <mat-form-field class="col-md-6">
+                <input matInput placeholder="Digite seu telefone" [(ngModel)]="client.name" name="nameClient" style="margin-top: 10px;">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="col-md-6">
+                <mat-label>Tipo telefone: </mat-label>
+                <mat-select [(ngModel)]="tipoTelefone" name="tipo">
+                  <mat-option *ngFor="let tipo of tipoTelefones" [value]="tipo.nome">
+                    {{ tipo.nome }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
     </form>
 
 </mat-card>

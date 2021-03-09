@@ -38,6 +38,7 @@ import { CartaoComponent } from './components/cartao/cartao.component';
 import { CuponsComponent } from './components/cupons/cupons.component';
 import { TransacoesComponent } from './components/transacoes/transacoes.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 registerLocaleData(localePt);
 
@@ -79,7 +80,8 @@ registerLocaleData(localePt);
     MatSelectModule,
     MatRadioModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    NgbModule
   ],
   providers: [{
     provide: LOCALE_ID,

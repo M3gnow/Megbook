@@ -22,19 +22,12 @@ table {
     color: #7b1fa2;
 }
 
-#title {
-    padding-bottom: 211px;
-    font-size: 40px;
+.radionButtons {
+    display: flex;
+    justify-content: space-between;
 }
 
-/* .mat-card {
-    padding-bottom: 20px ;
-} */
-
-.mat-card>:first-child, .mat-card-content>:first-child {
-    margin-bottom: 20px;
-}
-
-.customTitle.mat-card {
-    padding-bottom: 20px;
+.generoOption {
+    margin-top: 20px;
+    padding-top: 20px;
 }

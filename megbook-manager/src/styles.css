@@ -17,3 +17,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;  background
 .form.mat-card {
     margin-bottom: 20px;
 }
+
+.flexAndBetween {
+    display: flex;
+    justify-content: space-between;
+}
