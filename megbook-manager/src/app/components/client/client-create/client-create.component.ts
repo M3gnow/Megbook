@@ -18,6 +18,8 @@ export class ClientCreateComponent implements OnInit {
     price: null
   };
 
+  hide = true;
+
   constructor(private clienteService: ClientService, private router: Router) { }
 
   ngOnInit(): void {

@@ -3,11 +3,16 @@
 
     <form>
         <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
-            <mat-form-field class="col-md-6">
+            <mat-form-field class="col-md-4">
+                <mat-label>Nome</mat-label>
                 <input matInput placeholder="Digite seu nome completo" [(ngModel)]="client.name" name="nameClient" style="margin-top: 10px;">
             </mat-form-field>
+
+            <mat-form-field class="col-md-4">
+                <input matInput placeholder="Digite seu CPF" name="cpfClient" style="margin-top: 10px;">
+            </mat-form-field>
     
-            <mat-form-field appearance="fill" class="col-md-6">
+            <mat-form-field appearance="fill" class="col-md-4">
                 <mat-label>Data de nascimento</mat-label>
                 <input matInput [matDatepicker]="picker">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -30,12 +35,16 @@
         </div>
 
         <div style="margin-top: 10px;">
-            <mat-card-title>Telefone</mat-card-title>
+            <mat-card-title>Contato</mat-card-title>
         </div>
 
-        <div class="row" style="margin-top: 10px; margin-bottom: 10px;">    
-            <mat-form-field class="col-md-6">
-                <input matInput placeholder="Digite seu telefone" [(ngModel)]="client.name" name="nameClient" style="margin-top: 10px;">
+        <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
+            <mat-form-field class="col-md-2">
+                <input matInput placeholder="Digite seu DDD" name="dddClient" style="margin-top: 10px;">
+            </mat-form-field>
+
+            <mat-form-field class="col-md-4">
+                <input matInput placeholder="Digite seu telefone" name="telefoneClient" style="margin-top: 10px;">
             </mat-form-field>
 
             <mat-form-field appearance="fill" class="col-md-6">
@@ -45,7 +54,34 @@
                     {{ tipo.nome }}
                   </mat-option>
                 </mat-select>
-              </mat-form-field>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field class="col-md-4" style="margin-top: 25px;">
+                <mat-label>E-mail</mat-label>
+                <input matInput placeholder="Digite o e-mail" name="emailClient" style="margin-top: 10px;">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="col-md-4">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="col-md-4">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon> {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+
+        <div style="margin-top: 10px;">
+            <mat-card-title>Endereco residencial</mat-card-title>
         </div>
     </form>
 
