@@ -20,44 +20,7 @@
             </mat-form-field>
         </div>
 
-        <mat-card-title class="title">Gênero</mat-card-title>
-
-        <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
-            <div class="col-md-6">
-                <mat-card>
-                    <mat-radio-group class="flexAndBetween">
-                        <mat-radio-button value="masculino">Masculino</mat-radio-button>
-                        <mat-radio-button value="feminino">Feminino</mat-radio-button>
-                        <mat-radio-button value="">Prefiro não identificar</mat-radio-button>
-                    </mat-radio-group>
-                </mat-card>
-            </div>
-        </div>
-
-        <div style="margin-top: 10px;">
-            <mat-card-title>Contato</mat-card-title>
-        </div>
-
-        <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
-            <mat-form-field class="col-md-2">
-                <input matInput placeholder="Digite seu DDD" name="dddClient" style="margin-top: 10px;">
-            </mat-form-field>
-
-            <mat-form-field class="col-md-4">
-                <input matInput placeholder="Digite seu telefone" name="telefoneClient" style="margin-top: 10px;">
-            </mat-form-field>
-
-            <mat-form-field appearance="fill" class="col-md-6">
-                <mat-label>Tipo telefone: </mat-label>
-                <mat-select [(ngModel)]="tipoTelefone" name="tipo">
-                  <mat-option *ngFor="let tipo of tipoTelefones" [value]="tipo.nome">
-                    {{ tipo.nome }}
-                  </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-
-        <div class="row">
+        <div class="row" style="font-size: small;">
             <mat-form-field class="col-md-4" style="margin-top: 25px;">
                 <mat-label>E-mail</mat-label>
                 <input matInput placeholder="Digite o e-mail" name="emailClient" style="margin-top: 10px;">
@@ -81,20 +44,50 @@
         </div>
 
         <div style="margin-top: 10px;">
-            <mat-card-title>Endereco residencial</mat-card-title>
+            <mat-card-title>Contato</mat-card-title>
+        </div>
+
+        <div class="row" style="margin-top: 10px; margin-bottom: 10px; font-size: small;">
+            <mat-form-field class="col-md-2">
+                <input matInput placeholder="Digite seu DDD" name="dddClient" style="margin-top: 10px;">
+            </mat-form-field>
+
+            <mat-form-field class="col-md-4">
+                <input matInput placeholder="Digite seu telefone" name="telefoneClient" style="margin-top: 10px;">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="col-md-6">
+                <mat-label>Tipo telefone: </mat-label>
+                <mat-select [(ngModel)]="tipoTelefone" name="tipo">
+                  <mat-option *ngFor="let tipo of tipoTelefones" [value]="tipo.nome">
+                    {{ tipo.nome }}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <mat-card-title class="title">Gênero</mat-card-title>
+
+        <div class="row genero" style="font-size: small;">
+            <div class="selectOption col-md-12">
+                <mat-card>
+                    <mat-radio-group class="flexAndBetween">
+                        <mat-radio-button value="masculino">Masculino</mat-radio-button>
+                        <mat-radio-button value="feminino">Feminino</mat-radio-button>
+                        <mat-radio-button value="">Prefiro não identificar</mat-radio-button>
+                    </mat-radio-group>
+                </mat-card>
+            </div>
+        </div>
+
+        <div class="row buttonsAction">
+            <button mat-raised-button (click)="cancel()" color="primary">
+                Cancelar
+            </button>
+            <button mat-raised-button (click)="createClient()" color="primary">
+                Próximo
+            </button>
         </div>
     </form>
 
-</mat-card>
-
-<mat-card>
-    <div class="row buttonsAction">
-        <button mat-raised-button (click)="createClient()" color="primary">
-            Cadastrar
-        </button>
-        
-        <button mat-raised-button (click)="cancel()" color="primary">
-            Cancelar
-        </button>
-    </div>
 </mat-card>

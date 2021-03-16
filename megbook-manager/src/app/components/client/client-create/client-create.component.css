@@ -1,5 +1,6 @@
 form {
     display:flex;
+    position: relative;
     flex-direction: column;
 }
 
@@ -9,6 +10,7 @@ button {
 }
 
 .buttonsAction {
+    margin-top: 10px;
     display: flex;
     justify-content: flex-end;
 }

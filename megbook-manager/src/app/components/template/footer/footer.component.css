@@ -3,6 +3,8 @@
     bottom: 0px;
     display: flex;
     justify-content: flex-end;
+    margin-top: 50px;
+    width: 100%;
 }
 
 .footer > span { 

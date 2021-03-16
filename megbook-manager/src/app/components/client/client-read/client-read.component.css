@@ -22,12 +22,17 @@ table {
     color: #7b1fa2;
 }
 
-.radionButtons {
-    display: flex;
-    justify-content: space-between;
-}
-
 .generoOption {
     margin-top: 20px;
     padding-top: 20px;
+}
+
+.selectOption {
+    display: flex;
+    justify-content: center;
+}
+
+.genero {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
