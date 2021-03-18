@@ -22,19 +22,17 @@ table {
     color: #7b1fa2;
 }
 
-#title {
-    padding-bottom: 211px;
-    font-size: 40px;
+.generoOption {
+    margin-top: 20px;
+    padding-top: 20px;
 }
 
-/* .mat-card {
-    padding-bottom: 20px ;
-} */
-
-.mat-card>:first-child, .mat-card-content>:first-child {
-    margin-bottom: 20px;
+.selectOption {
+    display: flex;
+    justify-content: center;
 }
 
-.customTitle.mat-card {
-    padding-bottom: 20px;
+.genero {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
