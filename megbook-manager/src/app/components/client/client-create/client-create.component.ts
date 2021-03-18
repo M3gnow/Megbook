@@ -31,10 +31,11 @@ export class ClientCreateComponent implements OnInit {
   }
 
   createClient () : void {
-    this.clienteService.createClient(this.client).subscribe(()=> {
-      this.router.navigate(['/client']);
-      this.clienteService.showOnConsole("Cadastro realizado com sucesso!!");
-    });
+    // this.clienteService.createClient(this.client).subscribe(()=> {
+    //   this.router.navigate(['/client']);
+    //   this.clienteService.showOnConsole("Cadastro realizado com sucesso!!");
+    // });
+    this.router.navigate(['client/create/endereco/']);
   }
 
   cancel () : void{
