@@ -2,11 +2,11 @@
     <mat-toolbar-row class="toolbar">
         <div class="menuLogo">
             <!-- BUTTON MENU  -->
-                <button mat-button [matMenuTriggerFor]="adminView" *ngIf="false">
+                <button mat-button [matMenuTriggerFor]="adminView" *ngIf="false" (click)="drawer.toggle()">
                     <i class="material-icons">menu</i>
                 </button>
 
-                <button mat-button [matMenuTriggerFor]="clientView" *ngIf="true">
+                <button mat-button [matMenuTriggerFor]="clientView" *ngIf="true" (click)="drawer.toggle()">
                     <i class="material-icons">menu</i>
                 </button>
             <!-- END BUTTON MENU  -->
@@ -51,7 +51,7 @@
         
         <div>
             <!-- BUTTON LOGIN -->
-            <button mat-button routerLink="client/create">
+            <button mat-button routerLink="authentication">
                 Entrar
             </button>
             <!-- END BUTTON LOGIN -->
@@ -64,3 +64,17 @@
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
+
+<mat-drawer-container class="example-container" autosize>
+<mat-drawer #drawer class="example-sidenav" mode="side">
+        <p>Auto-resizing sidenav</p>
+        <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.klfdnvlkadsnvlkasndvlsdn</p>
+        <button (click)="showFiller = !showFiller" mat-raised-button>
+        Toggle extra text
+        </button>
+    </mat-drawer>
+    
+    <div class="container">
+        <router-outlet class="content"></router-outlet>
+    </div>
+</mat-drawer-container>

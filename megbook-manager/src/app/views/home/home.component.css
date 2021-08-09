@@ -1,10 +1,4 @@
-
-.home .title {
-    font-size: 3rem;
-    font-family: 300;
-    line-height:  1.2;
-}
-
-.home .subtitle {
-    font-size: 1.1em;
+.filterButtons {
+    display: flex;
+    justify-content: space-evenly;
 }

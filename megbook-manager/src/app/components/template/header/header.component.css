@@ -46,3 +46,20 @@
 .menuLogo {
     display: flex;
 }
+
+.content {
+    padding: 20px;
+    height: 100%;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.example-container {
+    min-width: max-content;
+    min-height: max-content;
+}
+
+.example-sidenav {
+    padding: 20px;
+    width: 300px;
+}

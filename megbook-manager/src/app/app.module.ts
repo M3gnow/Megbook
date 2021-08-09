@@ -4,7 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
-import { NavegadorComponent } from './components/template/navegador/navegador.component';
 import { HomeComponent } from './views/home/home.component';
 import { ClientComponent } from './views/client/client.component';
 import { ClientCreateComponent } from './components/client/client-create/client-create.component';
@@ -42,6 +41,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import localePt from  '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './components/login/login.component';
 
 registerLocaleData(localePt);
 
@@ -50,7 +50,6 @@ registerLocaleData(localePt);
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    NavegadorComponent,
     HomeComponent,
     ClientComponent,
     ClientCreateComponent,
@@ -61,6 +60,7 @@ registerLocaleData(localePt);
     CartaoComponent,
     CuponsComponent,
     TransacoesComponent,
+    LoginComponent,
   ],
   imports: [
     MatCheckboxModule,
