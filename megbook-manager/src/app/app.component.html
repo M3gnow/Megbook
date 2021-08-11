@@ -1,9 +1,16 @@
-<div>
-    <megbook-header></megbook-header>
-</div>
+<div class="container-fluid">
+    <megbook-toolbar [inputSideNav]="sideNav"></megbook-toolbar>
+    <mat-sidenav-container style="min-height: 800px">
+        <mat-sidenav #sideNav mode="side" opened>
+            <megbook-side-nav> </megbook-side-nav>
+        </mat-sidenav>
 
-<div>
-    <footer>
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+    <!-- <footer style="padding-right: 15px">
         <megbook-footer></megbook-footer>
-    </footer>
+    </footer> -->
 </div>

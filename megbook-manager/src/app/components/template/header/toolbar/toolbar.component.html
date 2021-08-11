@@ -1,0 +1,51 @@
+<nav
+    class="navbar navbar-expand-lg navbar-dark"
+    style="background-color: #7b1fa2"
+>
+    <a class="sidenav-button">
+        <button mat-button (click)="inputSideNav.toggle()" arian-hidden="true">
+            <i class="material-icons">menu</i>
+        </button>
+    </a>
+
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavDropdown"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div *ngIf="true" class="navbar-nav ml-auto">
+        <!-- BUTTON LOGIN -->
+        <button mat-button routerLink="authentication">Entrar</button>
+        <!-- END BUTTON LOGIN -->
+
+        <!-- BUTTON REGISTER -->
+        <button mat-button routerLink="client/create">Cadastre-se</button>
+        <!-- END BUTTON REGISTER -->
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown" *ngIf="false">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdownMenuLink"
+                >
+                    <div class="photo">
+                        <img src="assets/images/logo.png" alt="Profile Photo" />
+                    </div>
+
+                    Raas Masood
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item">Profile</a>
+                    <a class="dropdown-item">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
