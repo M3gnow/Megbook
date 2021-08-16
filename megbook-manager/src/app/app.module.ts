@@ -45,6 +45,13 @@ import { LoginComponent } from './components/login/login.component';
 import { SideNavComponent } from './components/template/header/side-nav/side-nav.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ToolbarComponent } from './components/template/header/toolbar/toolbar.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { AddressComponent } from './components/profile/address/address.component';
+import { ModalCreateComponent } from './components/profile/address/modal-create/modal-create.component';
+import { CardComponent } from './components/profile/card/card.component';
+import { CreateComponent } from './components/profile/card/create/create.component';
+import { UpdatePasswordComponent } from './components/profile/update-password/update-password.component';
+import { OrderComponent } from './components/order/order.component';
 
 registerLocaleData(localePt);
 
@@ -66,6 +73,13 @@ registerLocaleData(localePt);
         LoginComponent,
         SideNavComponent,
         ToolbarComponent,
+        ProfileComponent,
+        AddressComponent,
+        ModalCreateComponent,
+        CardComponent,
+        CreateComponent,
+        UpdatePasswordComponent,
+        OrderComponent,
     ],
     imports: [
         MatCheckboxModule,

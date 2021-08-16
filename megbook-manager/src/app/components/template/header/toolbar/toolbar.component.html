@@ -17,22 +17,26 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div *ngIf="true" class="navbar-nav ml-auto">
+    <div class="navbar-nav ml-auto" *ngIf="false">
         <!-- BUTTON LOGIN -->
-        <button mat-button routerLink="authentication">Entrar</button>
+        <button mat-button routerLink="authentication" style="color: #fff">
+            Entrar
+        </button>
         <!-- END BUTTON LOGIN -->
 
         <!-- BUTTON REGISTER -->
-        <button mat-button routerLink="client/create">Cadastre-se</button>
+        <button mat-button routerLink="client/create" style="color: #fff">
+            Cadastre-se
+        </button>
         <!-- END BUTTON REGISTER -->
     </div>
 
-    <div class="collapse navbar-collapse" id="navbarNavDropdown" *ngIf="false">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown" *ngIf="true">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
                 <a
                     class="nav-link dropdown-toggle"
-                    href="#"
+                    href="/profile"
                     id="navbarDropdownMenuLink"
                 >
                     <div class="photo">

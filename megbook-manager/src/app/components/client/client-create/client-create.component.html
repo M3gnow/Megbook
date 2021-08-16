@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="row" style="font-size: small">
-                    <mat-form-field class="col-md-4" style="margin-top: 25px">
+                    <mat-form-field class="col-md-12" style="margin-top: 25px">
                         <mat-label>E-mail</mat-label>
                         <input
                             matInput
@@ -53,7 +53,25 @@
                         />
                     </mat-form-field>
 
-                    <mat-form-field appearance="fill" class="col-md-4">
+                    <div class="container col-md-12" style="margin-top: 10px">
+                        <mat-label><b>A senha deve conter:</b></mat-label>
+
+                        <mat-label class="col-md-12">
+                            <ul
+                                style="
+                                    display: flex;
+                                    justify-content: space-around;
+                                "
+                            >
+                                <li>8 dígitos</li>
+                                <li>Letra maiúscula</li>
+                                <li>Letra minúscula</li>
+                                <li>Caracter especial</li>
+                            </ul>
+                        </mat-label>
+                    </div>
+
+                    <mat-form-field appearance="fill" class="col-md-6">
                         <mat-label>Digite sua senha</mat-label>
                         <input matInput [type]="hide ? 'password' : 'text'" />
                         <button
@@ -69,7 +87,7 @@
                         </button>
                     </mat-form-field>
 
-                    <mat-form-field appearance="fill" class="col-md-4">
+                    <mat-form-field appearance="fill" class="col-md-6">
                         <mat-label>Confirme sua senha</mat-label>
                         <input matInput [type]="hide ? 'password' : 'text'" />
                         <button
@@ -134,22 +152,25 @@
                     </mat-form-field>
                 </div>
 
-                <div
-                    class="row col-md-6"
-                    style="margin-left: 15px; margin-top: 20px"
+                <mat-form-field
+                    appearance="fill"
+                    class="col-md-3"
+                    style="padding-left: 40px"
                 >
-                    <mat-radio-group class="col-md-12 optionGenero">
-                        <mat-radio-button value="masculino"
-                            >Masculino</mat-radio-button
+                    <mat-label>Gênero: </mat-label>
+                    <mat-select
+                        [(ngModel)]="clientGenero"
+                        (selectionChange)="changeGenero($event)"
+                        name="tipo"
+                    >
+                        <mat-option
+                            *ngFor="let genero of optionGenero"
+                            [value]="genero.value"
                         >
-                        <mat-radio-button value="feminino"
-                            >Feminino</mat-radio-button
-                        >
-                        <mat-radio-button value=""
-                            >Prefiro não identificar</mat-radio-button
-                        >
-                    </mat-radio-group>
-                </div>
+                            {{ genero.name }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
             </div>
         </mat-card>
 

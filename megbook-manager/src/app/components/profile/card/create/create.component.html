@@ -1,0 +1,75 @@
+<div class="container">
+    <mat-dialog-title style="font-size: large">
+        Novo cartão de <b>crédito</b></mat-dialog-title
+    >
+
+    <mat-dialog-content>
+        <div class="row" style="margin-top: 20px">
+            <mat-form-field class="col-md-4">
+                <input
+                    matInput
+                    placeholder="Nome impresso no cartão"
+                    name="cpfClient"
+                    style="margin-top: 10px"
+                />
+            </mat-form-field>
+
+            <mat-form-field class="col-md-4">
+                <input
+                    matInput
+                    placeholder="Nº do cartão"
+                    name="cpfClient"
+                    style="margin-top: 10px"
+                />
+            </mat-form-field>
+
+            <mat-form-field class="col-md-2">
+                <input
+                    matInput
+                    placeholder="Código de segurança"
+                    name="cpfClient"
+                    style="margin-top: 10px"
+                />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="col-md-2">
+                <mat-label>Bandeira </mat-label>
+                <mat-select [(ngModel)]="tipoTelefone" name="tipo">
+                    <mat-option
+                        *ngFor="let tipo of tipoTelefones"
+                        [value]="tipo.nome"
+                    >
+                        {{ tipo.nome }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="row col-md-12" style="display: flex; margin-top: 10px">
+            <section>
+                <mat-checkbox
+                    [(ngModel)]="checked"
+                    (change)="changeCheckbox()"
+                    [disabled]="disabled"
+                    >Selecionar como preferencial</mat-checkbox
+                >
+            </section>
+        </div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions
+        style="display: flex; justify-content: flex-end; margin-top: 10px"
+    >
+        <button
+            mat-raised-button
+            (click)="cancel()"
+            color="primary"
+            style="margin-right: 20px"
+        >
+            Cancelar
+        </button>
+        <button mat-raised-button (click)="createCard()" color="primary">
+            Salvar
+        </button>
+    </mat-dialog-actions>
+</div>
