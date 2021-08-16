@@ -1,0 +1,11 @@
+.form {
+
+}
+
+.form > .button {
+    width: 50px;
+}
+
+.logo{
+    max-height: 50px;
+}

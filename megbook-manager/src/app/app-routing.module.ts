@@ -1,3 +1,6 @@
+import { OrderComponent } from './components/order/order.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -12,46 +15,58 @@ import { CartaoComponent } from './components/cartao/cartao.component';
 import { EnderecoComponent } from './components/endereco/endereco.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'clients',
-    component: ClientComponent
-  },
-  {
-    path: 'client/create',
-    component: ClientCreateComponent
-  },
-  {
-    path: 'client/update/:id',
-    component: ClientUpdateComponent
-  },
-  {
-    path: 'client/delete/:id',
-    component: ClientDeleteComponent
-  },
-  {
-    path: 'endereco',
-    component: EnderecoComponent
-  },
-  {
-    path: 'cartoes',
-    component: CartaoComponent
-  },
-  {
-    path: 'cupons',
-    component: CuponsComponent
-  },
-  {
-    path: 'transacoes',
-    component: TransacoesComponent
-  }
+    {
+        path: '',
+        component: HomeComponent,
+    },
+    {
+        path: 'clients',
+        component: ClientComponent,
+    },
+    {
+        path: 'client/create',
+        component: ClientCreateComponent,
+    },
+    {
+        path: 'client/update/:id',
+        component: ClientUpdateComponent,
+    },
+    {
+        path: 'client/delete/:id',
+        component: ClientDeleteComponent,
+    },
+    {
+        path: 'endereco',
+        component: EnderecoComponent,
+    },
+    {
+        path: 'cartoes',
+        component: CartaoComponent,
+    },
+    {
+        path: 'cupons',
+        component: CuponsComponent,
+    },
+    {
+        path: 'transacoes',
+        component: TransacoesComponent,
+    },
+    {
+        path: 'authentication',
+        component: LoginComponent,
+    },
+    {
+        path: 'profile',
+        component: ProfileComponent,
+    },
+    {
+        path: 'client/order',
+        component: OrderComponent,
+    },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

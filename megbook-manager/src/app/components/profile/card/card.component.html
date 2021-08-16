@@ -1,0 +1,61 @@
+<div style="margin-top: 20px">
+    <div
+        class="row col-md-12"
+        style="display: flex; justify-content: space-between"
+    >
+        <mat-card-title> Cartões </mat-card-title>
+        <section>
+            <mat-checkbox [(ngModel)]="checked">Preferencial</mat-checkbox>
+        </section>
+    </div>
+    <mat-card>
+        <div class="row">
+            <mat-form-field class="col-md-4">
+                <input
+                    matInput
+                    placeholder="Nome impresso no cartão"
+                    name="cpfClient"
+                    style="margin-top: 10px"
+                />
+            </mat-form-field>
+
+            <mat-form-field class="col-md-4">
+                <input
+                    matInput
+                    placeholder="Nº do cartão"
+                    name="cpfClient"
+                    style="margin-top: 10px"
+                />
+            </mat-form-field>
+
+            <mat-form-field class="col-md-2">
+                <input
+                    matInput
+                    placeholder="Código de segurança"
+                    name="cpfClient"
+                    style="margin-top: 10px"
+                />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="col-md-2">
+                <mat-label>Bandeira </mat-label>
+                <mat-select [(ngModel)]="tipoTelefone" name="tipo">
+                    <mat-option
+                        *ngFor="let tipo of tipoTelefones"
+                        [value]="tipo.nome"
+                    >
+                        {{ tipo.nome }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div
+            class="example-button-container"
+            style="display: flex; justify-content: flex-end"
+        >
+            <button mat-fab color="accent" (click)="openDialog()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+    </mat-card>
+</div>

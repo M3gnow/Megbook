@@ -1,365 +1,632 @@
-<div style="font-size: small;">
-    <mat-card style="margin-bottom: 20px;">
-        <mat-card-title> Dados Pessoais </mat-card-title>
-        <form>
-            <div class="row" style="margin-top: 10px; margin-bottom: 10px; font-size: small;">
-                <mat-form-field class="col-md-4">
-                    <mat-label>Nome</mat-label>
-                    <input matInput placeholder="Digite seu nome completo" [(ngModel)]="client.name" name="nameClient" style="margin-top: 10px;">
-                </mat-form-field>
+<div class="container">
+    <div style="font-size: small; margin-top: 20px">
+        <mat-card style="margin-bottom: 20px">
+            <mat-card-title> Dados Pessoais </mat-card-title>
+            <form>
+                <div
+                    class="row"
+                    style="
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                        font-size: small;
+                    "
+                >
+                    <mat-form-field class="col-md-4">
+                        <mat-label>Nome</mat-label>
+                        <input
+                            matInput
+                            placeholder="Digite seu nome completo"
+                            [(ngModel)]="client.name"
+                            name="nameClient"
+                            style="margin-top: 10px"
+                        />
+                    </mat-form-field>
 
-                <mat-form-field class="col-md-4">
-                    <input matInput placeholder="Digite seu CPF" name="cpfClient" style="margin-top: 10px;">
-                </mat-form-field>
-        
-                <mat-form-field appearance="fill" class="col-md-4">
-                    <mat-label>Data de nascimento</mat-label>
-                    <input matInput [matDatepicker]="picker">
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
+                    <mat-form-field class="col-md-4">
+                        <input
+                            matInput
+                            placeholder="Digite seu CPF"
+                            name="cpfClient"
+                            style="margin-top: 10px"
+                        />
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="col-md-4">
+                        <mat-label>Data de nascimento</mat-label>
+                        <input matInput [matDatepicker]="picker" />
+                        <mat-datepicker-toggle
+                            matSuffix
+                            [for]="picker"
+                        ></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+
+                <div class="row" style="font-size: small">
+                    <mat-form-field class="col-md-12" style="margin-top: 25px">
+                        <mat-label>E-mail</mat-label>
+                        <input
+                            matInput
+                            placeholder="Digite o e-mail"
+                            name="emailClient"
+                            style="margin-top: 10px"
+                        />
+                    </mat-form-field>
+
+                    <div class="container col-md-12" style="margin-top: 10px">
+                        <mat-label><b>A senha deve conter:</b></mat-label>
+
+                        <mat-label class="col-md-12">
+                            <ul
+                                style="
+                                    display: flex;
+                                    justify-content: space-around;
+                                "
+                            >
+                                <li>8 dígitos</li>
+                                <li>Letra maiúscula</li>
+                                <li>Letra minúscula</li>
+                                <li>Caracter especial</li>
+                            </ul>
+                        </mat-label>
+                    </div>
+
+                    <mat-form-field appearance="fill" class="col-md-6">
+                        <mat-label>Digite sua senha</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" />
+                        <button
+                            mat-icon-button
+                            matSuffix
+                            (click)="hide = !hide"
+                            [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide"
+                        >
+                            <mat-icon>{{
+                                hide ? 'visibility_off' : 'visibility'
+                            }}</mat-icon>
+                        </button>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="col-md-6">
+                        <mat-label>Confirme sua senha</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" />
+                        <button
+                            mat-icon-button
+                            matSuffix
+                            (click)="hide = !hide"
+                            [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide"
+                        >
+                            <mat-icon>
+                                {{
+                                    hide ? 'visibility_off' : 'visibility'
+                                }}</mat-icon
+                            >
+                        </button>
+                    </mat-form-field>
+                </div>
+            </form>
+        </mat-card>
+
+        <mat-card style="font-size: small">
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-card-title>Telefone</mat-card-title>
+                </div>
+
+                <div class="col-md-6">
+                    <mat-card-title>Gênero</mat-card-title>
+                </div>
             </div>
 
-            <div class="row" style="font-size: small;">
-                <mat-form-field class="col-md-4" style="margin-top: 25px;">
-                    <mat-label>E-mail</mat-label>
-                    <input matInput placeholder="Digite o e-mail" name="emailClient" style="margin-top: 10px;">
-                </mat-form-field>
-
-                <mat-form-field appearance="fill" class="col-md-4">
-                    <mat-label>Digite sua senha</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'">
-                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                    </button>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill" class="col-md-4">
-                    <mat-label>Confirme sua senha</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'">
-                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                    <mat-icon> {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                    </button>
-                </mat-form-field>
-            </div>
-        </form>
-    </mat-card>
-
-    <mat-card style="font-size: small;">
-        <div class="row">
-            <div class="col-md-6">
-                <mat-card-title>Telefone</mat-card-title>
-            </div>
-
-            <div class="col-md-6">
-                <mat-card-title>Gênero</mat-card-title>
-            </div>
-        </div>
-
-        <div class="row">
+            <div class="row">
                 <div class="row col-md-6">
                     <mat-form-field class="col-md-2">
-                        <input matInput placeholder="DDD" name="dddClient" style="margin-top: 10px;">
+                        <input
+                            matInput
+                            placeholder="DDD"
+                            name="dddClient"
+                            style="margin-top: 10px"
+                        />
                     </mat-form-field>
-                    
+
                     <mat-form-field class="col-md-5">
-                        <input matInput placeholder="Digite seu telefone" name="telefoneClient" style="margin-top: 10px;">
+                        <input
+                            matInput
+                            placeholder="Digite seu telefone"
+                            name="telefoneClient"
+                            style="margin-top: 10px"
+                        />
                     </mat-form-field>
-                    
+
                     <mat-form-field appearance="fill" class="col-md-5">
                         <mat-label>Tipo telefone: </mat-label>
                         <mat-select [(ngModel)]="tipoTelefone" name="tipo">
-                            <mat-option *ngFor="let tipo of tipoTelefones" [value]="tipo.nome">
+                            <mat-option
+                                *ngFor="let tipo of tipoTelefones"
+                                [value]="tipo.nome"
+                            >
                                 {{ tipo.nome }}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
                 </div>
-        
-                <div class="row col-md-6" style="margin-left: 15px; margin-top: 20px;">
-                    <mat-radio-group class="col-md-12 optionGenero">
-                        <mat-radio-button value="masculino">Masculino</mat-radio-button>
-                        <mat-radio-button value="feminino">Feminino</mat-radio-button>
-                        <mat-radio-button value="">Prefiro não identificar</mat-radio-button>
-                    </mat-radio-group>
+
+                <mat-form-field
+                    appearance="fill"
+                    class="col-md-3"
+                    style="padding-left: 40px"
+                >
+                    <mat-label>Gênero: </mat-label>
+                    <mat-select
+                        [(ngModel)]="clientGenero"
+                        (selectionChange)="changeGenero($event)"
+                        name="tipo"
+                    >
+                        <mat-option
+                            *ngFor="let genero of optionGenero"
+                            [value]="genero.value"
+                        >
+                            {{ genero.name }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </mat-card>
+
+        <mat-card style="margin-top: 20px">
+            <mat-card-title> ENDEREÇO RESIDENCIAL </mat-card-title>
+
+            <form>
+                <div class="row">
+                    <mat-form-field class="col-md-12" *ngIf="checked">
+                        <mat-label>Nome</mat-label>
+                        <input
+                            matInput
+                            placeholder="Identifique seu endereço (utilizada para registro de entrega)"
+                            [(ngModel)]="client.name"
+                            name="nameClient"
+                            style="margin-top: 10px"
+                        />
+                    </mat-form-field>
                 </div>
-        </div>
-    </mat-card>
 
-    <mat-card style="margin-top: 20px;">  
-        <mat-card-title> ENDEREÇO </mat-card-title>
+                <div class="row">
+                    <mat-form-field class="col-md-2">
+                        <input
+                            matInput
+                            placeholder="CEP"
+                            name="cpfClient"
+                            style="margin-top: 10px"
+                        />
+                    </mat-form-field>
 
-        <form>
+                    <mat-form-field class="col-md-4">
+                        <input
+                            matInput
+                            placeholder="Digite o logradouro"
+                            name="cpfClient"
+                            style="margin-top: 10px"
+                        />
+                    </mat-form-field>
+
+                    <mat-form-field class="col-md-1">
+                        <input
+                            matInput
+                            placeholder="Nº"
+                            name="cpfClient"
+                            style="margin-top: 10px"
+                        />
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="col-md-2">
+                        <mat-label>Tipo logradouro: </mat-label>
+                        <mat-select [(ngModel)]="tipoLogradouro" name="tipo">
+                            <mat-option
+                                *ngFor="let element of tipoLogradouros"
+                                [value]="element"
+                            >
+                                {{ element.tipo }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="col-md-3">
+                        <mat-label>Tipo residência: </mat-label>
+                        <mat-select [(ngModel)]="tipoResidencia" name="tipo">
+                            <mat-option
+                                *ngFor="let element of tipoResidencias"
+                                [value]="element"
+                            >
+                                {{ element.nome }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <mat-form-field appearance="fill" class="col-md-3">
+                        <mat-label>País: </mat-label>
+                        <mat-select [(ngModel)]="pais" name="tipo">
+                            <mat-option
+                                *ngFor="let element of paises"
+                                [value]="element"
+                            >
+                                {{ element.nome }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="col-md-3">
+                        <mat-label>Estado: </mat-label>
+                        <mat-select [(ngModel)]="estado" name="tipo">
+                            <mat-option
+                                *ngFor="let element of estados"
+                                [value]="element"
+                            >
+                                {{ element.nome }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="col-md-3">
+                        <mat-label>Cidade: </mat-label>
+                        <mat-select [(ngModel)]="cidade" name="tipo">
+                            <mat-option
+                                *ngFor="let element of cidades"
+                                [value]="element"
+                            >
+                                {{ element.nome }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="col-md-3">
+                        <mat-label>Bairro: </mat-label>
+                        <mat-select [(ngModel)]="bairro" name="tipo">
+                            <mat-option
+                                *ngFor="let element of bairros"
+                                [value]="element"
+                            >
+                                {{ element.nome }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-md-12">
+                        <input
+                            matInput
+                            placeholder="Observações (opcional)"
+                            name="observacoesClient"
+                            style="margin-top: 10px"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="row col-md-12" style="display: flex">
+                    <section>
+                        <mat-checkbox
+                            [(ngModel)]="checked"
+                            (change)="changeCheckbox()"
+                            [disabled]="disabled"
+                            >Selecionar como padrão de entrega e
+                            cobrança</mat-checkbox
+                        >
+                    </section>
+                </div>
+            </form>
+        </mat-card>
+
+        <mat-card style="margin-top: 20px" *ngIf="!checked">
+            <mat-card-title> ENDEREÇO DE ENTREGA </mat-card-title>
+
+            <form>
+                <div class="row">
+                    <mat-form-field class="col-md-12">
+                        <mat-label>Nome</mat-label>
+                        <input
+                            matInput
+                            placeholder="Identifique seu endereço"
+                            [(ngModel)]="client.name"
+                            name="nameClient"
+                            style="margin-top: 10px"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <mat-form-field class="col-md-2">
+                        <input
+                            matInput
+                            placeholder="CEP"
+                            name="cpfClient"
+                            style="margin-top: 10px"
+                        />
+                    </mat-form-field>
+
+                    <mat-form-field class="col-md-4">
+                        <input
+                            matInput
+                            placeholder="Digite o logradouro"
+                            name="cpfClient"
+                            style="margin-top: 10px"
+                        />
+                    </mat-form-field>
+
+                    <mat-form-field class="col-md-1">
+                        <input
+                            matInput
+                            placeholder="Nº"
+                            name="cpfClient"
+                            style="margin-top: 10px"
+                        />
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="col-md-2">
+                        <mat-label>Tipo logradouro: </mat-label>
+                        <mat-select [(ngModel)]="tipoLogradouro" name="tipo">
+                            <mat-option
+                                *ngFor="let element of tipoLogradouros"
+                                [value]="element"
+                            >
+                                {{ element.tipo }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="col-md-3">
+                        <mat-label>Tipo residência: </mat-label>
+                        <mat-select [(ngModel)]="tipoResidencia" name="tipo">
+                            <mat-option
+                                *ngFor="let element of tipoResidencias"
+                                [value]="element"
+                            >
+                                {{ element.nome }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <mat-form-field appearance="fill" class="col-md-3">
+                        <mat-label>País: </mat-label>
+                        <mat-select [(ngModel)]="pais" name="tipo">
+                            <mat-option
+                                *ngFor="let element of paises"
+                                [value]="element"
+                            >
+                                {{ element.nome }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="col-md-3">
+                        <mat-label>Estado: </mat-label>
+                        <mat-select [(ngModel)]="estado" name="tipo">
+                            <mat-option
+                                *ngFor="let element of estados"
+                                [value]="element"
+                            >
+                                {{ element.nome }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="col-md-3">
+                        <mat-label>Cidade: </mat-label>
+                        <mat-select [(ngModel)]="cidade" name="tipo">
+                            <mat-option
+                                *ngFor="let element of cidades"
+                                [value]="element"
+                            >
+                                {{ element.nome }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="col-md-3">
+                        <mat-label>Bairro: </mat-label>
+                        <mat-select [(ngModel)]="bairro" name="tipo">
+                            <mat-option
+                                *ngFor="let element of bairros"
+                                [value]="element"
+                            >
+                                {{ element.nome }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-md-12">
+                        <input
+                            matInput
+                            placeholder="Observações (opcional)"
+                            name="observacoesClient"
+                            style="margin-top: 10px"
+                        />
+                    </mat-form-field>
+                </div>
+            </form>
+        </mat-card>
+
+        <mat-card style="margin-top: 20px" *ngIf="!checked">
+            <mat-card-title>ENDEREÇO DE COBRANÇA </mat-card-title>
+
+            <form>
+                <div class="row">
+                    <mat-form-field class="col-md-2">
+                        <input
+                            matInput
+                            placeholder="CEP"
+                            name="cpfClient"
+                            style="margin-top: 10px"
+                        />
+                    </mat-form-field>
+
+                    <mat-form-field class="col-md-4">
+                        <input
+                            matInput
+                            placeholder="Digite o logradouro"
+                            name="cpfClient"
+                            style="margin-top: 10px"
+                        />
+                    </mat-form-field>
+
+                    <mat-form-field class="col-md-1">
+                        <input
+                            matInput
+                            placeholder="Nº"
+                            name="cpfClient"
+                            style="margin-top: 10px"
+                        />
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="col-md-2">
+                        <mat-label>Tipo logradouro: </mat-label>
+                        <mat-select [(ngModel)]="tipoLogradouro" name="tipo">
+                            <mat-option
+                                *ngFor="let element of tipoLogradouros"
+                                [value]="element"
+                            >
+                                {{ element.tipo }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="col-md-3">
+                        <mat-label>Tipo residência: </mat-label>
+                        <mat-select [(ngModel)]="tipoResidencia" name="tipo">
+                            <mat-option
+                                *ngFor="let element of tipoResidencias"
+                                [value]="element"
+                            >
+                                {{ element.nome }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <mat-form-field appearance="fill" class="col-md-3">
+                        <mat-label>País: </mat-label>
+                        <mat-select [(ngModel)]="pais" name="tipo">
+                            <mat-option
+                                *ngFor="let element of paises"
+                                [value]="element"
+                            >
+                                {{ element.nome }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="col-md-3">
+                        <mat-label>Estado: </mat-label>
+                        <mat-select [(ngModel)]="estado" name="tipo">
+                            <mat-option
+                                *ngFor="let element of estados"
+                                [value]="element"
+                            >
+                                {{ element.nome }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="col-md-3">
+                        <mat-label>Cidade: </mat-label>
+                        <mat-select [(ngModel)]="cidade" name="tipo">
+                            <mat-option
+                                *ngFor="let element of cidades"
+                                [value]="element"
+                            >
+                                {{ element.nome }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="col-md-3">
+                        <mat-label>Bairro: </mat-label>
+                        <mat-select [(ngModel)]="bairro" name="tipo">
+                            <mat-option
+                                *ngFor="let element of bairros"
+                                [value]="element"
+                            >
+                                {{ element.nome }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-md-12">
+                        <input
+                            matInput
+                            placeholder="Observações (opcional)"
+                            name="observacoesClient"
+                            style="margin-top: 10px"
+                        />
+                    </mat-form-field>
+                </div>
+            </form>
+        </mat-card>
+
+        <mat-card style="margin-top: 20px">
+            <mat-card-title
+                >CARTÃO DE CRÉDITO
+                <mat-label style="font-size: medium"> (opcional) </mat-label>
+            </mat-card-title>
+
             <div class="row">
-                
-                <mat-form-field class="col-md-2">
-                    <input matInput placeholder="CEP" name="cpfClient" style="margin-top: 10px;">
+                <mat-form-field class="col-md-4">
+                    <input
+                        matInput
+                        placeholder="Nome impresso no cartão"
+                        name="cpfClient"
+                        style="margin-top: 10px"
+                    />
                 </mat-form-field>
 
                 <mat-form-field class="col-md-4">
-                    <input matInput placeholder="Digite o logradouro" name="cpfClient" style="margin-top: 10px;">
+                    <input
+                        matInput
+                        placeholder="Nº do cartão"
+                        name="cpfClient"
+                        style="margin-top: 10px"
+                    />
                 </mat-form-field>
 
-                <mat-form-field class="col-md-1">
-                    <input matInput placeholder="Nº" name="cpfClient" style="margin-top: 10px;">
-                </mat-form-field>
-
-                <mat-form-field appearance="fill" class="col-md-2">
-                    <mat-label>Tipo logradouro: </mat-label>
-                    <mat-select [(ngModel)]="tipoLogradouro" name="tipo">
-                        <mat-option *ngFor="let element of tipoLogradouros" [value]="element">
-                        {{ element.tipo }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-                
-                <mat-form-field appearance="fill" class="col-md-3">
-                    <mat-label>Tipo residência: </mat-label>
-                    <mat-select [(ngModel)]="tipoResidencia" name="tipo">
-                        <mat-option *ngFor="let element of tipoResidencias" [value]="element">
-                        {{ element.nome }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </div>
-
-            <div class="row">
-                <mat-form-field appearance="fill" class="col-md-3">
-                    <mat-label>País: </mat-label>
-                    <mat-select [(ngModel)]="pais" name="tipo">
-                        <mat-option *ngFor="let element of paises" [value]="element">
-                        {{ element.nome }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill" class="col-md-3">
-                    <mat-label>Estado: </mat-label>
-                    <mat-select [(ngModel)]="estado" name="tipo">
-                        <mat-option *ngFor="let element of estados" [value]="element">
-                        {{ element.nome }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill" class="col-md-3">
-                    <mat-label>Cidade: </mat-label>
-                    <mat-select [(ngModel)]="cidade" name="tipo">
-                        <mat-option *ngFor="let element of cidades" [value]="element">
-                        {{ element.nome }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill" class="col-md-3">
-                    <mat-label>Bairro: </mat-label>
-                    <mat-select [(ngModel)]="bairro" name="tipo">
-                        <mat-option *ngFor="let element of bairros" [value]="element">
-                        {{ element.nome }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </div>
-
-            <div class="row col-md-12" style="display: flex;">
-                <section>
-                    <mat-checkbox [(ngModel)]="checked" (change)="changeCheckbox()" [disabled]="disabled">Selecionar como padrão de entrega e cobrança</mat-checkbox>
-                </section>
-            </div>
-        </form>
-    </mat-card>
-
-    <mat-card style="margin-top: 20px;" *ngIf="!checked">  
-        <mat-card-title> ENDEREÇO DE ENTREGA </mat-card-title>
-
-        <form>
-            <div class="row">
-                
                 <mat-form-field class="col-md-2">
-                    <input matInput placeholder="CEP" name="cpfClient" style="margin-top: 10px;">
-                </mat-form-field>
-
-                <mat-form-field class="col-md-4">
-                    <input matInput placeholder="Digite o logradouro" name="cpfClient" style="margin-top: 10px;">
-                </mat-form-field>
-
-                <mat-form-field class="col-md-1">
-                    <input matInput placeholder="Nº" name="cpfClient" style="margin-top: 10px;">
+                    <input
+                        matInput
+                        placeholder="Código de segurança"
+                        name="cpfClient"
+                        style="margin-top: 10px"
+                    />
                 </mat-form-field>
 
                 <mat-form-field appearance="fill" class="col-md-2">
-                    <mat-label>Tipo logradouro: </mat-label>
-                    <mat-select [(ngModel)]="tipoLogradouro" name="tipo">
-                        <mat-option *ngFor="let element of tipoLogradouros" [value]="element">
-                        {{ element.tipo }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-                
-                <mat-form-field appearance="fill" class="col-md-3">
-                    <mat-label>Tipo residência: </mat-label>
-                    <mat-select [(ngModel)]="tipoResidencia" name="tipo">
-                        <mat-option *ngFor="let element of tipoResidencias" [value]="element">
-                        {{ element.nome }}
+                    <mat-label>Bandeira </mat-label>
+                    <mat-select [(ngModel)]="tipoTelefone" name="tipo">
+                        <mat-option
+                            *ngFor="let tipo of tipoTelefones"
+                            [value]="tipo.nome"
+                        >
+                            {{ tipo.nome }}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
+        </mat-card>
 
-            <div class="row">
-                <mat-form-field appearance="fill" class="col-md-3">
-                    <mat-label>País: </mat-label>
-                    <mat-select [(ngModel)]="pais" name="tipo">
-                        <mat-option *ngFor="let element of paises" [value]="element">
-                        {{ element.nome }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill" class="col-md-3">
-                    <mat-label>Estado: </mat-label>
-                    <mat-select [(ngModel)]="estado" name="tipo">
-                        <mat-option *ngFor="let element of estados" [value]="element">
-                        {{ element.nome }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill" class="col-md-3">
-                    <mat-label>Cidade: </mat-label>
-                    <mat-select [(ngModel)]="cidade" name="tipo">
-                        <mat-option *ngFor="let element of cidades" [value]="element">
-                        {{ element.nome }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill" class="col-md-3">
-                    <mat-label>Bairro: </mat-label>
-                    <mat-select [(ngModel)]="bairro" name="tipo">
-                        <mat-option *ngFor="let element of bairros" [value]="element">
-                        {{ element.nome }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
+        <div style="margin-top: 20px">
+            <div class="row buttonsAction">
+                <button mat-raised-button (click)="cancel()" color="primary">
+                    Cancelar
+                </button>
+                <button
+                    mat-raised-button
+                    (click)="createClient()"
+                    color="primary"
+                >
+                    Finalizar
+                </button>
             </div>
-        </form>
-    </mat-card>
-
-    <mat-card style="margin-top: 20px;" *ngIf="!checked">  
-        <mat-card-title>ENDEREÇO DE COBRANÇA </mat-card-title>
-
-        <form>
-            <div class="row">
-                
-                <mat-form-field class="col-md-2">
-                    <input matInput placeholder="CEP" name="cpfClient" style="margin-top: 10px;">
-                </mat-form-field>
-
-                <mat-form-field class="col-md-4">
-                    <input matInput placeholder="Digite o logradouro" name="cpfClient" style="margin-top: 10px;">
-                </mat-form-field>
-
-                <mat-form-field class="col-md-1">
-                    <input matInput placeholder="Nº" name="cpfClient" style="margin-top: 10px;">
-                </mat-form-field>
-
-                <mat-form-field appearance="fill" class="col-md-2">
-                    <mat-label>Tipo logradouro: </mat-label>
-                    <mat-select [(ngModel)]="tipoLogradouro" name="tipo">
-                        <mat-option *ngFor="let element of tipoLogradouros" [value]="element">
-                        {{ element.tipo }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-                
-                <mat-form-field appearance="fill" class="col-md-3">
-                    <mat-label>Tipo residência: </mat-label>
-                    <mat-select [(ngModel)]="tipoResidencia" name="tipo">
-                        <mat-option *ngFor="let element of tipoResidencias" [value]="element">
-                        {{ element.nome }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </div>
-
-            <div class="row">
-                <mat-form-field appearance="fill" class="col-md-3">
-                    <mat-label>País: </mat-label>
-                    <mat-select [(ngModel)]="pais" name="tipo">
-                        <mat-option *ngFor="let element of paises" [value]="element">
-                        {{ element.nome }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill" class="col-md-3">
-                    <mat-label>Estado: </mat-label>
-                    <mat-select [(ngModel)]="estado" name="tipo">
-                        <mat-option *ngFor="let element of estados" [value]="element">
-                        {{ element.nome }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill" class="col-md-3">
-                    <mat-label>Cidade: </mat-label>
-                    <mat-select [(ngModel)]="cidade" name="tipo">
-                        <mat-option *ngFor="let element of cidades" [value]="element">
-                        {{ element.nome }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill" class="col-md-3">
-                    <mat-label>Bairro: </mat-label>
-                    <mat-select [(ngModel)]="bairro" name="tipo">
-                        <mat-option *ngFor="let element of bairros" [value]="element">
-                        {{ element.nome }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </div>
-        </form>
-    </mat-card>
-
-    <mat-card style="margin-top: 20px;">
-        <mat-card-title>CARTÃO DE CRÉDITO </mat-card-title>
-
-        <div class="row">
-            <mat-form-field class="col-md-4">
-                <input matInput placeholder="Nome impresso no cartão" name="cpfClient" style="margin-top: 10px;">
-            </mat-form-field>
-
-            <mat-form-field class="col-md-4">
-                <input matInput placeholder="Nº do cartão" name="cpfClient" style="margin-top: 10px;">
-            </mat-form-field>
-            
-            <mat-form-field class="col-md-2">
-                <input matInput placeholder="Código de segurança" name="cpfClient" style="margin-top: 10px;">
-            </mat-form-field>
-    
-            
-    
-            <mat-form-field appearance="fill" class="col-md-2">
-                <mat-label>Bandeira </mat-label>
-                <mat-select [(ngModel)]="tipoTelefone" name="tipo">
-                    <mat-option *ngFor="let tipo of tipoTelefones" [value]="tipo.nome">
-                    {{ tipo.nome }}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-    </mat-card>
-
-    <div style="margin-top: 20px;">
-        <div class="row buttonsAction">
-            <button mat-raised-button (click)="cancel()" color="primary">
-                Cancelar
-            </button>
-            <button mat-raised-button (click)="createClient()" color="primary">
-                Finalizar
-            </button>
         </div>
     </div>
 </div>

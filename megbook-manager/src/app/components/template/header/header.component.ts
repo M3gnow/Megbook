@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  showFiller = false;
   headerData: HeaderData;
 
   constructor(private headerService: HeaderService) { }

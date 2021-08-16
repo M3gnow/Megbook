@@ -11,94 +11,155 @@ import { Router } from '@angular/router';
 import { ClientService } from '../client.service';
 
 @Component({
-  selector: 'megbook-client-create',
-  templateUrl: './client-create.component.html',
-  styleUrls: ['./client-create.component.css']
+    selector: 'megbook-client-create',
+    templateUrl: './client-create.component.html',
+    styleUrls: ['./client-create.component.css'],
 })
 export class ClientCreateComponent implements OnInit {
-  tipoTelefones: tipoTelefone[];
-  tipoLogradouros: tipoLogradouro[];
-  tipoResidencias: tipoResidencia[];
-  bairros: Bairro[];
-  cidades: Cidade[];
-  estados: Estado[];
-  paises: Pais[];
-  
-  tipoTelefone: string;
-  tipoLogradouro: string;
-  tipoResidencia: string;
-  bairro: string;
-  cidade: string;
-  estado: string;
-  pais: string;
-  checked : boolean = false;
-  disabled : boolean = false;
+    tipoTelefones: tipoTelefone[];
+    tipoLogradouros: tipoLogradouro[];
+    tipoResidencias: tipoResidencia[];
+    bairros: Bairro[];
+    cidades: Cidade[];
+    estados: Estado[];
+    paises: Pais[];
 
-  client: Client = {
-    name: null,
-    price: null
-  };
+    tipoTelefone: string;
+    tipoLogradouro: string;
+    tipoResidencia: string;
+    bairro: string;
+    cidade: string;
+    estado: string;
+    pais: string;
+    checked: boolean = false;
+    disabled: boolean = false;
 
-  hide = true;
+    client: Client = {
+        name: null,
+        price: null,
+    };
 
-  constructor(private clienteService: ClientService, private router: Router) { }
+    hide = true;
 
-  ngOnInit(): void {
-    this.disabled = false;
-    this.tipoTelefones = [
-      { nome: 'Telefone Fixo' },
-      { nome: 'Telefone Celular' },
-      { nome: 'Telefone Comercial' },
-    ];
+    clientGenero: boolean;
+    optionGenero = Array<any>();
+    constructor(
+        private clienteService: ClientService,
+        private router: Router
+    ) {}
 
-    this.tipoLogradouros = [
-      { tipo: 'Rua' },
-      { tipo: 'Avenida' },
-      { tipo: 'Estrada' },
-    ];
+    ngOnInit(): void {
+        this.disabled = false;
+        this.tipoTelefones = [
+            { nome: 'Telefone Fixo' },
+            { nome: 'Telefone Celular' },
+            { nome: 'Telefone Comercial' },
+        ];
 
-    this.tipoResidencias = [
-      { nome: 'Casa' },
-      { nome: 'Apartamento' },
-      { nome: 'Sobrado' },
-    ];
+        this.tipoLogradouros = [
+            { tipo: 'Rua' },
+            { tipo: 'Avenida' },
+            { tipo: 'Estrada' },
+        ];
 
-    this.paises = [
-      { nome: 'Brasil', sigla: 'BR' },
-      { nome: 'China', sigla: 'CN' },
-      { nome: 'Alemanha', sigla: 'DE' },
-    ]
+        this.tipoResidencias = [
+            { nome: 'Casa' },
+            { nome: 'Apartamento' },
+            { nome: 'Sobrado' },
+        ];
 
-    this.estados = [
-      { nome: 'São Paulo', uf: 'SP',  pais: { nome: 'Brasil', sigla : 'BR'} },
-      { nome: 'Rio de Janeiro', uf: 'SP',  pais: { nome: 'Brasil', sigla : 'BR'} }
-    ];
+        this.paises = [
+            { nome: 'Brasil', sigla: 'BR' },
+            { nome: 'China', sigla: 'CN' },
+            { nome: 'Alemanha', sigla: 'DE' },
+        ];
 
-    this.cidades = [
-      { nome: 'Itaquaquecetuba', estado: { nome: 'São Paulo', uf: 'SP',  pais: { nome: 'Brasil', sigla : 'BR'} } },
-      { nome: 'Brás', estado: { nome: 'São Paulo', uf: 'SP',  pais: { nome: 'Brasil', sigla : 'BR'} } }
-    ];
+        this.estados = [
+            {
+                nome: 'São Paulo',
+                uf: 'SP',
+                pais: { nome: 'Brasil', sigla: 'BR' },
+            },
+            {
+                nome: 'Rio de Janeiro',
+                uf: 'SP',
+                pais: { nome: 'Brasil', sigla: 'BR' },
+            },
+        ];
 
-    this.bairros = [
-      {nome: 'Jardim Tropical', cidade: { nome: 'Itaquaquecetuba', estado: { nome: 'São Paulo', uf: 'SP',  pais: { nome: 'Brasil', sigla : 'BR'} } } },
-      {nome: 'Jardim Paineira', cidade: { nome: 'Itaquaquecetuba', estado: { nome: 'São Paulo', uf: 'SP',  pais: { nome: 'Brasil', sigla : 'BR'} } } }
-    ];
-  }
+        this.cidades = [
+            {
+                nome: 'Itaquaquecetuba',
+                estado: {
+                    nome: 'São Paulo',
+                    uf: 'SP',
+                    pais: { nome: 'Brasil', sigla: 'BR' },
+                },
+            },
+            {
+                nome: 'Brás',
+                estado: {
+                    nome: 'São Paulo',
+                    uf: 'SP',
+                    pais: { nome: 'Brasil', sigla: 'BR' },
+                },
+            },
+        ];
 
-  createClient () : void {
-    // this.clienteService.createClient(this.client).subscribe(()=> {
-    //   this.router.navigate(['/client']);
-    //   this.clienteService.showOnConsole("Cadastro realizado com sucesso!!");
-    // });
-  }
+        this.bairros = [
+            {
+                nome: 'Jardim Tropical',
+                cidade: {
+                    nome: 'Itaquaquecetuba',
+                    estado: {
+                        nome: 'São Paulo',
+                        uf: 'SP',
+                        pais: { nome: 'Brasil', sigla: 'BR' },
+                    },
+                },
+            },
+            {
+                nome: 'Jardim Paineira',
+                cidade: {
+                    nome: 'Itaquaquecetuba',
+                    estado: {
+                        nome: 'São Paulo',
+                        uf: 'SP',
+                        pais: { nome: 'Brasil', sigla: 'BR' },
+                    },
+                },
+            },
+        ];
 
-  cancel () : void{
-    this.router.navigate(['/client']);
-  }
+        this.optionGenero = [
+            {
+                name: 'Masculino',
+                value: true,
+            },
+            {
+                name: 'Feminino',
+                value: false,
+            },
+        ];
+    }
 
-  changeCheckbox() : void {
-    this.checked = !this.checked;
-    console.log(this.checked);
-  }
+    createClient(): void {
+        // this.clienteService.createClient(this.client).subscribe(()=> {
+        //   this.router.navigate(['/client']);
+        //   this.clienteService.showOnConsole("Cadastro realizado com sucesso!!");
+        // });
+    }
 
+    cancel(): void {
+        this.router.navigate(['/client']);
+    }
+
+    changeCheckbox(): void {
+        this.checked = !this.checked;
+        console.log(this.checked);
+    }
+
+    changeGenero(value: any) {
+        console.log(value.value);
+    }
 }
