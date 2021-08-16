@@ -1,7 +1,7 @@
 <div class="container">
-    <div style="margin: 20px">
+    <div class="row" style="margin: 20px">
         <mat-icon style="margin-right: 10px">shopping_basket</mat-icon>
-        <mat-card-title> Meus pedidos </mat-card-title>
+        <mat-card-title style="padding-top: 07px;"> Meus pedidos </mat-card-title>
     </div>
 
     <div style="margin: 20px" class="row">
@@ -18,95 +18,26 @@
         </mat-form-field>
     </div>
 
-    <!-- <div class="container">
+    <div class="container">
         <div *ngFor="let order of orders" style="margin-top: 10px">
-            <div style="display: flex; justify-content: space-between">
-                <mat-label class="col-md-2">NÚMERO DO PEDIDO</mat-label>
-                <mat-label class="col-md-2">STATUS</mat-label>
-                <mat-label class="col-md-2">DATA</mat-label>
-                <mat-label class="col-md-2">PAGAMENTO</mat-label>
-                <mat-label class="col-md-2">DETALHES</mat-label>
-            </div>
+            <mat-card>
+                <div class="col-md-12" style="display: flex; justify-content: space-between">
+                    <mat-label class="col-md-3">NÚMERO DO PEDIDO</mat-label>
+                    <mat-label class="col-md-2">STATUS</mat-label>
+                    <mat-label class="col-md-2">DATA</mat-label>
+                    <mat-label class="col-md-2">PAGAMENTO</mat-label>
+                    <mat-label class="col-md-2">DETALHES</mat-label>
+                </div>
 
-            <mat-card> {{ order.id }} </mat-card>
+                <div class="col-md-12" style="display: flex; justify-content: space-between">
+                    <mat-label class="col-md-3">{{ order.id }}</mat-label>
+                    <mat-label class="col-md-2">{{ order.status }}</mat-label>
+                    <mat-label class="col-md-2">{{ order.dateOrder }}</mat-label>
+                    <mat-label class="col-md-2">{{ order.payment }}</mat-label>
+                    <mat-label class="col-md-2"><a href="/clients"> Ver detalhes</a></mat-label>
+                </div>
+            </mat-card>
         </div>
-    </div> -->
-
-    <div class="mat-elevation-z8">
-        <table
-            mat-table
-            [dataSource]="dataSource"
-            multiTemplateDataRows
-            class="mat-elevation-z8"
-        >
-            <ng-container
-                matColumnDef="{{ column }}"
-                *ngFor="let column of columnsToDisplay"
-            >
-                <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
-                <td mat-cell *matCellDef="let element">
-                    {{ element.id }}
-                    <div class="shortcode-col col-xs-12"></div>
-                </td>
-            </ng-container>
-
-            <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
-            <ng-container matColumnDef="expandedDetail">
-                <td
-                    mat-cell
-                    *matCellDef="let element"
-                    [attr.colspan]="columnsToDisplay.length"
-                >
-                    <div
-                        class="example-element-detail"
-                        [@detailExpand]="
-                            element == expandedElement
-                                ? 'expanded'
-                                : 'collapsed'
-                        "
-                    >
-                        <div class="example-element-diagram">
-                            <div class="example-element-position">
-                                {{ element.id }}
-                            </div>
-                            <div class="example-element-symbol">
-                                {{ element.status }}
-                            </div>
-                            <div class="example-element-name">
-                                {{ element.dateOrder }}
-                            </div>
-                            <div class="example-element-weight">
-                                {{ element.payment }}
-                            </div>
-                        </div>
-                        <div class="example-element-description">
-                            {{ element.details }}
-                            <span
-                                class="example-element-description-attribution"
-                            >
-                                -- Wikipedia
-                            </span>
-                        </div>
-                    </div>
-                </td>
-            </ng-container>
-            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-            <tr
-                mat-row
-                *matRowDef="let element; columns: columnsToDisplay"
-                class="example-element-row"
-                [class.example-expanded-row]="expandedElement === element"
-                (click)="
-                    expandedElement =
-                        expandedElement === element ? null : element
-                "
-            ></tr>
-            <tr
-                mat-row
-                *matRowDef="let row; columns: ['expandedDetail']"
-                class="example-detail-row"
-            ></tr>
-        </table>
-        <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator> -->
     </div>
+
 </div>
