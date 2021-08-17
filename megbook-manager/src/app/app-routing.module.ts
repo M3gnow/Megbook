@@ -13,6 +13,7 @@ import { CuponsComponent } from './components/cupons/cupons.component';
 import { TransacoesComponent } from './components/transacoes/transacoes.component';
 import { CartaoComponent } from './components/cartao/cartao.component';
 import { EnderecoComponent } from './components/endereco/endereco.component';
+import { DetailComponent } from './components/order/detail/detail.component';
 
 const routes: Routes = [
     {
@@ -52,7 +53,7 @@ const routes: Routes = [
         component: TransacoesComponent,
     },
     {
-        path: 'authentication',
+        path: 'auth',
         component: LoginComponent,
     },
     {
@@ -62,6 +63,10 @@ const routes: Routes = [
     {
         path: 'client/order',
         component: OrderComponent,
+    },
+    {
+        path: 'client/order/detail',
+        component: DetailComponent,
     },
 ];
 

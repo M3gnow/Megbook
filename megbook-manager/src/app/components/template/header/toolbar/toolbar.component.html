@@ -1,25 +1,17 @@
-<nav
-    class="navbar navbar-expand-lg navbar-dark"
-    style="background-color: #7b1fa2"
->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #7b1fa2">
     <a class="sidenav-button">
         <button mat-button (click)="inputSideNav.toggle()" arian-hidden="true">
             <i class="material-icons">menu</i>
         </button>
     </a>
 
-    <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavDropdown"
-    >
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="navbar-nav ml-auto" *ngIf="false">
+    <div class="navbar-nav ml-auto" *ngIf="true">
         <!-- BUTTON LOGIN -->
-        <button mat-button routerLink="authentication" style="color: #fff">
+        <button mat-button routerLink="auth" style="color: #fff">
             Entrar
         </button>
         <!-- END BUTTON LOGIN -->
@@ -31,14 +23,10 @@
         <!-- END BUTTON REGISTER -->
     </div>
 
-    <div class="collapse navbar-collapse" id="navbarNavDropdown" *ngIf="true">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown" *ngIf="false">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
-                <a
-                    class="nav-link dropdown-toggle"
-                    href="/profile"
-                    id="navbarDropdownMenuLink"
-                >
+                <a class="nav-link dropdown-toggle" href="/profile" id="navbarDropdownMenuLink">
                     <div class="photo">
                         <img src="assets/images/logo.png" alt="Profile Photo" />
                     </div>

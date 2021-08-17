@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { tipoTelefone } from 'src/app/models/tipoTelefone';
 
 @Component({
     selector: 'megbook-profile',
@@ -13,6 +14,13 @@ export class ProfileComponent implements OnInit {
     dateNasciment: any;
     optionGenero = Array<any>();
     selectView: string = 'registerView';
+    emailProfile: string;
+    dddProfile: string;
+    phoneProfile:String
+
+    tipoTelefones: tipoTelefone[];
+
+    tipoTelefone: string;
 
     constructor(private router: Router) {}
 
@@ -30,6 +38,17 @@ export class ProfileComponent implements OnInit {
                 value: false,
             },
         ];
+        
+        this.tipoTelefones = [
+            { nome: 'Telefone Fixo' },
+            { nome: 'Telefone Celular' },
+            { nome: 'Telefone Comercial' },
+        ];
+
+        this.emailProfile = 'thiago.araujo7@fatec.sp.gov.br';
+        this.dddProfile = '11';
+        this.phoneProfile = '984661480';
+        this.tipoTelefone = 'Telefone Fixo';
     }
 
     changeGenero(value: any) {

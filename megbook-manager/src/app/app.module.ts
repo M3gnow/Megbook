@@ -52,6 +52,7 @@ import { CardComponent } from './components/profile/card/card.component';
 import { CreateComponent } from './components/profile/card/create/create.component';
 import { UpdatePasswordComponent } from './components/profile/update-password/update-password.component';
 import { OrderComponent } from './components/order/order.component';
+import { DetailComponent } from './components/order/detail/detail.component';
 
 registerLocaleData(localePt);
 
@@ -80,6 +81,7 @@ registerLocaleData(localePt);
         CreateComponent,
         UpdatePasswordComponent,
         OrderComponent,
+        DetailComponent,
     ],
     imports: [
         MatCheckboxModule,

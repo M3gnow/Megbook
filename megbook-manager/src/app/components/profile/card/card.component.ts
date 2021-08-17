@@ -2,6 +2,7 @@ import { CreateComponent } from './create/create.component';
 import { tipoTelefone } from './../../../models/tipoTelefone';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Bandeira } from 'src/app/models/bandeira-model';
 
 @Component({
     selector: 'megbook-card',
@@ -12,6 +13,12 @@ export class CardComponent implements OnInit {
     tipoTelefones: tipoTelefone[];
     tipoTelefone: string;
     checked: boolean = false;
+    bandeiras: Bandeira[];
+    bandeira: string;
+    nameCard: string
+    numberCard: string;
+    codCard: string;
+
     constructor(public dialog: MatDialog) {}
 
     ngOnInit(): void {
@@ -20,6 +27,17 @@ export class CardComponent implements OnInit {
             { nome: 'Telefone Celular' },
             { nome: 'Telefone Comercial' },
         ];
+
+        this.bandeiras = [
+            {nome: 'Visa'},
+            {nome: 'Mastercard'}
+        ]
+
+        this.bandeira = 'Visa';
+        this.nameCard = 'THIAGO H DE ARAUJO'
+        this.numberCard = '4444 3333 1111 2222';
+        this.codCard = '111';
+
     }
 
     openDialog() {

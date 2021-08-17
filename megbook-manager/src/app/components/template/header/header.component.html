@@ -2,37 +2,37 @@
     <mat-toolbar-row class="toolbar">
         <div class="menuLogo">
             <!-- BUTTON MENU  -->
-                <button mat-button [matMenuTriggerFor]="adminView" *ngIf="false" (click)="drawer.toggle()">
-                    <i class="material-icons">menu</i>
-                </button>
+            <button mat-button [matMenuTriggerFor]="adminView" *ngIf="false" (click)="drawer.toggle()">
+                <i class="material-icons">menu</i>
+            </button>
 
-                <button mat-button [matMenuTriggerFor]="clientView" *ngIf="true" (click)="drawer.toggle()">
-                    <i class="material-icons">menu</i>
-                </button>
+            <button mat-button [matMenuTriggerFor]="clientView" *ngIf="true" (click)="drawer.toggle()">
+                <i class="material-icons">menu</i>
+            </button>
             <!-- END BUTTON MENU  -->
 
             <!-- OPTION MENU  -->
-                <mat-menu #adminView="matMenu">
-                    <button mat-menu-item routerLink="">Home</button>
-                    <button mat-menu-item routerLink="">Perfil</button>
-                    <button mat-menu-item routerLink="">Vendas</button>
-                    <button mat-menu-item routerLink="">Estoque</button>
-                    <button mat-menu-item routerLink="">Controle de Trocas</button>
-                    <button mat-menu-item routerLink="/clients">Lista de Clientes</button>
-                </mat-menu>
+            <mat-menu #adminView="matMenu">
+                <button mat-menu-item routerLink="">Home</button>
+                <button mat-menu-item routerLink="">Perfil</button>
+                <button mat-menu-item routerLink="">Vendas</button>
+                <button mat-menu-item routerLink="">Estoque</button>
+                <button mat-menu-item routerLink="">Controle de Trocas</button>
+                <button mat-menu-item routerLink="/clients">Lista de Clientes</button>
+            </mat-menu>
 
-                <mat-menu #clientView="matMenu">
-                    <button mat-menu-item>Minha conta</button>
-                    <button mat-menu-item [matMenuTriggerFor]="optionsEnderecoChildren">Endereços</button>
-                    <button mat-menu-item routerLink="/clients">Cartões</button>
-                    <button mat-menu-item routerLink="/clients">Meus cupons</button>
-                    <button mat-menu-item routerLink="/clients">Histórico de transações</button>
-                </mat-menu>
+            <mat-menu #clientView="matMenu">
+                <button mat-menu-item>Minha conta</button>
+                <button mat-menu-item [matMenuTriggerFor]="optionsEnderecoChildren">Endereços</button>
+                <button mat-menu-item routerLink="/clients">Cartões</button>
+                <button mat-menu-item routerLink="/clients">Meus cupons</button>
+                <button mat-menu-item routerLink="/clients">Histórico de transações</button>
+            </mat-menu>
 
-                <mat-menu #optionsEnderecoChildren="matMenu">
-                    <button mat-menu-item routerLink="/clients">Endereço de entrega</button>
-                    <button mat-menu-item routerLink="/clients">Endereço de cobrança</button>
-                </mat-menu>
+            <mat-menu #optionsEnderecoChildren="matMenu">
+                <button mat-menu-item routerLink="/clients">Endereço de entrega</button>
+                <button mat-menu-item routerLink="/clients">Endereço de cobrança</button>
+            </mat-menu>
             <!-- OPTION MENU  -->
 
             <!-- LOGO MARCA  -->
@@ -48,14 +48,14 @@
             <!-- END LOGO MARCA  -->
         </div>
 
-        
+
         <div>
             <!-- BUTTON LOGIN -->
-            <button mat-button routerLink="authentication">
+            <button mat-button routerLink="auth">
                 Entrar
             </button>
             <!-- END BUTTON LOGIN -->
-            
+
             <!-- BUTTON REGISTER -->
             <button mat-button routerLink="client/create">
                 Cadastre-se
@@ -66,14 +66,14 @@
 </mat-toolbar>
 
 <mat-drawer-container class="example-container" autosize>
-<mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-drawer #drawer class="example-sidenav" mode="side">
         <p>Auto-resizing sidenav</p>
         <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.klfdnvlkadsnvlkasndvlsdn</p>
         <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
+            Toggle extra text
         </button>
     </mat-drawer>
-    
+
     <div class="container">
         <router-outlet class="content"></router-outlet>
     </div>

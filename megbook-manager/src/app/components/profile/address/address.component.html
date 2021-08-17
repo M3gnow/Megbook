@@ -1,31 +1,13 @@
 <div style="margin-top: 20px">
     <mat-card-title>Meus endereços</mat-card-title>
-    <div
-        class="container row"
-        style="display: flex; justify-content: space-around; margin-top: 20px"
-    >
-        <button
-            mat-stroked-button
-            class="col-md-3"
-            color="accent"
-            (click)="filterAddress('residencial')"
-        >
+    <div class="container row" style="display: flex; justify-content: space-around; margin-top: 20px">
+        <button mat-stroked-button class="col-md-3" color="accent" (click)="filterAddress('residencial')">
             Residencial
         </button>
-        <button
-            mat-stroked-button
-            class="col-md-3"
-            color="accent"
-            (click)="filterAddress('entrega')"
-        >
+        <button mat-stroked-button class="col-md-3" color="accent" (click)="filterAddress('entrega')">
             Entrega
         </button>
-        <button
-            mat-stroked-button
-            class="col-md-3"
-            color="accent"
-            (click)="filterAddress('cobranca')"
-        >
+        <button mat-stroked-button class="col-md-3" color="accent" (click)="filterAddress('cobranca')">
             Cobrança
         </button>
     </div>
@@ -36,51 +18,30 @@
                 <div class="row" *ngIf="activeAdd">
                     <mat-form-field class="col-md-12">
                         <mat-label>Nome</mat-label>
-                        <input
-                            matInput
-                            placeholder="Identifique seu endereço"
-                            [(ngModel)]="idName"
-                            name="nameClient"
-                            style="margin-top: 10px"
-                        />
+                        <input matInput placeholder="Identifique seu endereço" [(ngModel)]="nameAddressEntrega"
+                            name="nameClient" style="margin-top: 10px" />
                     </mat-form-field>
                 </div>
 
                 <div class="row">
                     <mat-form-field class="col-md-2">
-                        <input
-                            matInput
-                            placeholder="CEP"
-                            name="cpfClient"
-                            style="margin-top: 10px"
-                        />
+                        <input matInput placeholder="CEP" name="cpfClient" [(ngModel)]="cep" style="margin-top: 10px" />
                     </mat-form-field>
 
                     <mat-form-field class="col-md-4">
-                        <input
-                            matInput
-                            placeholder="Digite o logradouro"
-                            name="cpfClient"
-                            style="margin-top: 10px"
-                        />
+                        <input matInput placeholder="Digite o logradouro" name="cpfClient" [(ngModel)]="logradouro"
+                            style="margin-top: 10px" />
                     </mat-form-field>
 
                     <mat-form-field class="col-md-1">
-                        <input
-                            matInput
-                            placeholder="Nº"
-                            name="cpfClient"
-                            style="margin-top: 10px"
-                        />
+                        <input matInput placeholder="Nº" [(ngModel)]="number" name="cpfClient"
+                            style="margin-top: 10px" />
                     </mat-form-field>
 
                     <mat-form-field appearance="fill" class="col-md-2">
                         <mat-label>Tipo logradouro: </mat-label>
                         <mat-select [(ngModel)]="tipoLogradouro" name="tipo">
-                            <mat-option
-                                *ngFor="let element of tipoLogradouros"
-                                [value]="element"
-                            >
+                            <mat-option *ngFor="let element of tipoLogradouros" [value]="element">
                                 {{ element.tipo }}
                             </mat-option>
                         </mat-select>
@@ -89,10 +50,7 @@
                     <mat-form-field appearance="fill" class="col-md-3">
                         <mat-label>Tipo residência: </mat-label>
                         <mat-select [(ngModel)]="tipoResidencia" name="tipo">
-                            <mat-option
-                                *ngFor="let element of tipoResidencias"
-                                [value]="element"
-                            >
+                            <mat-option *ngFor="let element of tipoResidencias" [value]="element">
                                 {{ element.nome }}
                             </mat-option>
                         </mat-select>
@@ -103,10 +61,7 @@
                     <mat-form-field appearance="fill" class="col-md-3">
                         <mat-label>País: </mat-label>
                         <mat-select [(ngModel)]="pais" name="tipo">
-                            <mat-option
-                                *ngFor="let element of paises"
-                                [value]="element"
-                            >
+                            <mat-option *ngFor="let element of paises" [value]="element">
                                 {{ element.nome }}
                             </mat-option>
                         </mat-select>
@@ -115,10 +70,7 @@
                     <mat-form-field appearance="fill" class="col-md-3">
                         <mat-label>Estado: </mat-label>
                         <mat-select [(ngModel)]="estado" name="tipo">
-                            <mat-option
-                                *ngFor="let element of estados"
-                                [value]="element"
-                            >
+                            <mat-option *ngFor="let element of estados" [value]="element">
                                 {{ element.nome }}
                             </mat-option>
                         </mat-select>
@@ -127,10 +79,7 @@
                     <mat-form-field appearance="fill" class="col-md-3">
                         <mat-label>Cidade: </mat-label>
                         <mat-select [(ngModel)]="cidade" name="tipo">
-                            <mat-option
-                                *ngFor="let element of cidades"
-                                [value]="element"
-                            >
+                            <mat-option *ngFor="let element of cidades" [value]="element">
                                 {{ element.nome }}
                             </mat-option>
                         </mat-select>
@@ -139,31 +88,20 @@
                     <mat-form-field appearance="fill" class="col-md-3">
                         <mat-label>Bairro: </mat-label>
                         <mat-select [(ngModel)]="bairro" name="tipo">
-                            <mat-option
-                                *ngFor="let element of bairros"
-                                [value]="element"
-                            >
+                            <mat-option *ngFor="let element of bairros" [value]="element">
                                 {{ element.nome }}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
 
                     <mat-form-field class="col-md-12">
-                        <input
-                            matInput
-                            placeholder="Observações (opcional)"
-                            name="observacoesClient"
-                            style="margin-top: 10px"
-                        />
+                        <input matInput placeholder="Observações (opcional)" name="observacoesClient"
+                            [(ngModel)]="observacao" style="margin-top: 10px" />
                     </mat-form-field>
                 </div>
             </div>
 
-            <div
-                class="example-button-container"
-                style="display: flex; justify-content: flex-end"
-                *ngIf="activeAdd"
-            >
+            <div class="example-button-container" style="display: flex; justify-content: flex-end" *ngIf="activeAdd">
                 <button mat-fab color="accent" (click)="openDialog()">
                     <mat-icon>add</mat-icon>
                 </button>
