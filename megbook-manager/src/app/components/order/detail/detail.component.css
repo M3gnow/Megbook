@@ -1,0 +1,17 @@
+.alingCenter {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.imgProduct {
+    max-height: 200px !important; 
+    min-height: 200px !important;
+    
+}
+
+.styleBorder {
+    border-width: 10px;
+    border-style: double;
+    border-color: black;
+}

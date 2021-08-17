@@ -2,11 +2,7 @@
     <div class="logo">
         <a href="/" class="simple-text logo-mini">
             <div class="logo-img">
-                <img
-                    style="max-height: 50px"
-                    src="./assets/images/livro.png"
-                    alt="logo"
-                />
+                <img style="max-height: 50px" src="./assets/images/livro.png" alt="logo" />
             </div>
         </a>
 
@@ -14,11 +10,20 @@
     </div>
 
     <ul class="nav" style="list-style: none">
-        <div>
+        <div *ngIf=false>
             <li class="active">
                 <a routerLink="/">
                     <mat-icon aria-hidden="false">dashboard</mat-icon>
                     <span style="margin: inherit">Dashboard</span>
+                </a>
+            </li>
+        </div>
+
+        <div>
+            <li class="active">
+                <a routerLink="/">
+                    <mat-icon aria-hidden="false">view_carousel</mat-icon>
+                    <span style="margin: inherit">Home</span>
                 </a>
             </li>
         </div>
@@ -33,6 +38,15 @@
         </div>
 
         <div>
+            <li class="active">
+                <a routerLink="/profile">
+                    <mat-icon>person</mat-icon>
+                    <span style="margin: inherit">Minha Conta</span>
+                </a>
+            </li>
+        </div>
+
+        <div *ngIf=false>
             <li class="active">
                 <a routerLink="/clients">
                     <mat-icon aria-hidden="false">person_search</mat-icon>

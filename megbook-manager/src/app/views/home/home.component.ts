@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   filterValue = []
   constructor(private headerService: HeaderService, config: NgbCarouselConfig) { 
     // Config carousel
-    config.interval = 10000;
+    config.interval = 3000;
     config.wrap = false;
     config.keyboard = false;
     config.pauseOnHover = false;

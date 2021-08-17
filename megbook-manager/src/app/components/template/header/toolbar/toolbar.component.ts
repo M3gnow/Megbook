@@ -10,5 +10,6 @@ export class ToolbarComponent implements OnInit {
     @Input() inputSideNav: MatSidenav;
     constructor() {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+    }
 }
