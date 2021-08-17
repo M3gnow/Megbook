@@ -404,8 +404,8 @@
 
                 <mat-form-field appearance="fill" class="col-md-2">
                     <mat-label>Bandeira </mat-label>
-                    <mat-select [(ngModel)]="tipoTelefone" name="tipo">
-                        <mat-option *ngFor="let tipo of tipoTelefones" [value]="tipo.nome">
+                    <mat-select [(ngModel)]="bandeira" name="tipo">
+                        <mat-option *ngFor="let tipo of bandeiras" [value]="tipo.nome">
                             {{ tipo.nome }}
                         </mat-option>
                     </mat-select>

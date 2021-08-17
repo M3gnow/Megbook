@@ -32,7 +32,7 @@ export class OrderComponent implements OnInit {
                 id: 100771,
                 status: 'entregue',
                 dateOrder: '26/05/2021',
-                payment: 'CARTÃO CREDITO',
+                total: 'R$ 125,00',
                 details:
                     'Hydrogen is a chemical element with symbol H and atomic number 1. With a standard',
             },
@@ -40,7 +40,7 @@ export class OrderComponent implements OnInit {
                 id: 100772,
                 status: 'entregue',
                 dateOrder: '26/05/2021',
-                payment: 'CARTÃO CREDITO',
+                total: 'R$ 125,00',
                 details:
                     'Hydrogen is a chemical element with symbol H and atomic number 1. With a standard',
             },
@@ -48,7 +48,7 @@ export class OrderComponent implements OnInit {
                 id: 100773,
                 status: 'entregue',
                 dateOrder: '26/05/2021',
-                payment: 'CARTÃO CREDITO',
+                total: 'R$ 125,00',
                 details:
                     'Hydrogen is a chemical element with symbol H and atomic number 1. With a standard',
             },

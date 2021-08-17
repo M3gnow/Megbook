@@ -2,6 +2,6 @@ export interface Order {
     id: number;
     status: string;
     dateOrder: string;
-    payment: string;
+    total: string;
     details: string;
 }

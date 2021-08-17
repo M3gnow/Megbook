@@ -9,6 +9,7 @@ import { Client } from './../client.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClientService } from '../client.service';
+import { Bandeira } from 'src/app/models/bandeira-model';
 
 @Component({
     selector: 'megbook-client-create',
@@ -61,6 +62,9 @@ export class ClientCreateComponent implements OnInit {
 
     clientGenero: boolean;
     optionGenero = Array<any>();
+    bandeiras: Bandeira[];
+    bandeira: string;
+
     constructor(
         private clienteService: ClientService,
         private router: Router
@@ -68,12 +72,6 @@ export class ClientCreateComponent implements OnInit {
 
     ngOnInit(): void {
         this.disabled = false;
-        this.tipoTelefones = [
-            { nome: 'Telefone Fixo' },
-            { nome: 'Telefone Celular' },
-            { nome: 'Telefone Comercial' },
-        ];
-
         this.tipoTelefones = [
             { nome: 'Telefone Fixo' },
             { nome: 'Telefone Celular' },
@@ -146,6 +144,15 @@ export class ClientCreateComponent implements OnInit {
                 value: false,
             },
         ];
+
+        this.bandeiras = [
+            {
+                nome: 'Visa'
+            },
+            {
+                nome: 'Mastercard'
+            }
+        ]
     }
 
     createClient(): void {
