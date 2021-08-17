@@ -147,15 +147,16 @@ export class ClientCreateComponent implements OnInit {
 
         this.bandeiras = [
             {
-                nome: 'Visa'
+                nome: 'Visa',
             },
             {
-                nome: 'Mastercard'
-            }
-        ]
+                nome: 'Mastercard',
+            },
+        ];
     }
 
     createClient(): void {
+        this.router.navigate(['/']);
         // this.clienteService.createClient(this.client).subscribe(()=> {
         //   this.router.navigate(['/client']);
         //   this.clienteService.showOnConsole("Cadastro realizado com sucesso!!");
@@ -176,7 +177,7 @@ export class ClientCreateComponent implements OnInit {
     }
 }
 
-const tipoLogradourosMock = [   
+const tipoLogradourosMock = [
     {
         tipo: 'Aeroporto',
     },
@@ -308,7 +309,7 @@ const tipoLogradourosMock = [
     },
     {
         tipo: 'Vila',
-    }
+    },
 ];
 
 const tipoResidenciaMock = [
